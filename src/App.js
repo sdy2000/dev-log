@@ -1,11 +1,16 @@
-import { HiEmojiHappy } from "react-icons/hi";
+import { useContext } from "react";
+import { ThemeContext } from "./store/theme/themeContext";
 
 function App() {
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
-    <div className="text-3xl text-red-700">
-      Hello World 1
-      <HiEmojiHappy />
-    </div>
+    <>
+      <button
+      className="bg-blue-600 dark:bg-slate-700 text-white rounded-xl shadow-lg px-4 p-2"
+        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+        {theme}
+      </button>
+    </>
   );
 }
 
