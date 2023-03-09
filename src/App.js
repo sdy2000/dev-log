@@ -5,8 +5,6 @@ function App() {
   // console.log(context);
 
   const chengeTheme = () => {
-
-    console.log(theme.theme);
     setTheme({
       theme: theme.theme === 'dark' ? 'light' : 'dark'
     })
