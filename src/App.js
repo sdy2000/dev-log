@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomeLayout } from "./parts";
+import { HomeIndex } from "./pages";
 
 function App() {
   // const { theme, setTheme } = useStateTheme();
@@ -14,7 +15,9 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="*" element={<HomeLayout />} />
+          <Route element={<HomeLayout />}>
+            <Route path="/" element={<HomeIndex />} />
+          </Route>
           {/* <Route path="UserPanel" element={<UserLayout />} /> */}
           {/* <Route path="/AdminPanel" element={<AdminLaout />} /> */}
         </Routes>

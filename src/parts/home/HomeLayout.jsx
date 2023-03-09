@@ -1,8 +1,14 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import {Footer, Header} from '../'
 
 const HomeLayout = () => {
   return (
-    <div>HomeLayout</div>
+    <>
+    <Header />
+    <Outlet />
+    <Footer />
+    </>
   )
 }
 
