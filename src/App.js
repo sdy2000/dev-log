@@ -1,21 +1,24 @@
-import { useStateTheme } from "./store/hooks/useStateContext";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HomeLayout } from "./parts";
 
 function App() {
-  const { theme, setTheme } = useStateTheme();
-  // console.log(context);
+  // const { theme, setTheme } = useStateTheme();
+  // // console.log(context);
 
-  const chengeTheme = () => {
-    setTheme({
-      theme: theme.theme === 'dark' ? 'light' : 'dark'
-    })
-  }
+  // const chengeTheme = () => {
+  //   setTheme({
+  //     theme: theme.theme === 'dark' ? 'light' : 'dark'
+  //   })
+  // }
   return (
     <>
-      <button
-        className="bg-blue-600 dark:bg-slate-700 text-white rounded-xl shadow-lg px-4 p-2"
-        onClick={chengeTheme}>
-        {theme.theme}
-      </button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="*" element={<HomeLayout />} />
+          {/* <Route path="UserPanel" element={<UserLayout />} /> */}
+          {/* <Route path="/AdminPanel" element={<AdminLaout />} /> */}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
