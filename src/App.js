@@ -3,14 +3,6 @@ import { HomeLayout } from "./parts";
 import { HomeIndex } from "./pages";
 
 function App() {
-  // const { theme, setTheme } = useStateTheme();
-  // // console.log(context);
-
-  // const chengeTheme = () => {
-  //   setTheme({
-  //     theme: theme.theme === 'dark' ? 'light' : 'dark'
-  //   })
-  // }
   return (
     <>
       <BrowserRouter>

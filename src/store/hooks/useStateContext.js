@@ -1,7 +1,7 @@
 import { useContext} from 'react'
 import { getFreshContext, stateContext } from '../context/ContextProvider';
 
-export default function useStateContext() {
+export function useStateContext() {
 
     const { context, setContext } = useContext(stateContext);
     return {
