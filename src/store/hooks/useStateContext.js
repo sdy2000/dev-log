@@ -1,5 +1,5 @@
 import { useContext} from 'react'
-import { getFreshContext, getFreshTheme, stateContext } from '../context/ContextProvider';
+import { getFreshContext, stateContext } from '../context/ContextProvider';
 
 export default function useStateContext() {
 
