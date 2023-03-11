@@ -3,7 +3,7 @@ import { BlogCard, Button1 } from '../../components'
 
 const blogs = [
   {
-    id: 1, blogName: 'MongoDB', blogImage: 'blog-1.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker',createDate:'2023-03-11',
+    id: 1, blogName: 'MongoDB', blogImage: 'blog-1.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker',createDate:'2023-03-11',topic:'Database',slug:'#',
     blogDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aspernatur laboriosam quos optio tempora distinctio quibusdam odit ut, magnam voluptatum esse magni ipsam dolorum iusto id temporibus dolores saepe repellat!',
     author: {
       authorName:'sajad',authorImage:'sdy2000.jpg'
@@ -42,11 +42,11 @@ const HomeIndex = () => {
           </div>
         </div>
 
-        <div className="main" >
+        <div className="main bg-lbs dark:bg-dbs py-20" >
           <div className='contents'>
             {/* <!--==================== BLOG ====================--> */}
             <div className="blog">
-              <h2 className='text-lg font-bold'>Lastest Blog Post</h2>
+              <h2 className='text-lg font-bold mb-12 text-center leading-5'>Lastest Blog Post</h2>
               {blogs.map(blog => (
                 <BlogCard blog={blog} key={blog.id} />
               ))}
