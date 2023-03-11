@@ -8,17 +8,21 @@ import '../assets/global.css'
 const Header = () => {
     const [isOpenList, setIsOpenList] = useState(false);
 
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 640) {
+                setIsOpenList(false);
+            }
+        })
+    }, [])
 
     function OpenList() {
-        console.log(isOpenList);
         (isOpenList === true) ? setIsOpenList(false) : setIsOpenList(true);
     }
-    console.log(window.innerWidth);
-    console.log(isOpenList);
     return (
         <header>
             <div className='container bg-lbp dark:bg-dbp'>
-                <nav className='navbar flex flex-col justify-between items-start gap-3 px-3'>
+                <nav className='navbar flex justify-between items-start gap-3 p-3'>
                     <a className='logo text-lfp dark:text-dfp text-2xl font-black' href="/">
                         <span className='text-accent'>DEV</span>
                         Log
@@ -43,7 +47,7 @@ const Header = () => {
 
                     <div className={`mobile-nav fixed inset-0 bg-lbp dark:bg-dbp py-16 px-5 overflow-auto
                      overscroll-contain z-10 border-l-2 border-b-lap dark:border-b-dap
-                     ${isOpenList ? 'translate-x-[100%] invisible' : 'translate-x-[20%] visible'}`}>
+                     ${!isOpenList ? 'translate-x-[100%] invisible' : 'translate-x-[20%] visible'}`}>
                         <span onClick={OpenList} className='nav-close-btn absolute top-5 right-[25%]'>
                             <IconButton value={<IoMdClose />} />
                         </span>
