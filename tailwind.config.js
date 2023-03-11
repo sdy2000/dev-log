@@ -19,6 +19,7 @@ module.exports = {
 
         // accent
         "accent": "#4364f9",
+        "daccent": "#1f3597",
 
         // // // Dark Mode // // / 
         // Backround
