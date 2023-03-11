@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+    /*--------------- Header ----------------*/
+    .mobile-nav-wrapper{
+        @apply pb-5 mb-5 border-b border-b-lap dark:border-b-dap
+    }
+    .mobile-nav-wrapper .title{
+        @apply text-xl font-extrabold text-lfp mb-4
+    }
+    .mobile-nav-wrapper ul li{
+        @apply mb-2
+    }
+    .mobile-nav-wrapper ul li a{
+        @apply text-base text-lfs dark:text-dfs transition-all duration-300 hover:text-accent dark:hover:text-accent
+    }
+
+
+}

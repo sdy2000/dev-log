@@ -27,4 +27,9 @@ body {
 
 .dark-theme::-webkit-scrollbar-track {
   background: hsl(219, 27%, 20%);
+}
+
+/*=============== Base ===============*/
+.mobile-nav {
+  transition: 0.7s cubic-bezier(1, 0, 0.3, 0.7);
 }/*# sourceMappingURL=styles.css.map */
