@@ -17,5 +17,15 @@
         @apply text-base text-lfs dark:text-dfs transition-all duration-300 hover:text-accent dark:hover:text-accent
     }
 
+    /*--------------- Footer ----------------*/
+    .container .wrapper{
+        @apply text-center flex flex-col gap-3
+    }
 
+    .footer-title{
+        @apply text-lg font-extrabold text-lfp dark:text-dfp
+    }
+    .wrapper .footer-link{
+        @apply text-base text-lfs dark:text-dfs
+    }
 }

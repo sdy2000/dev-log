@@ -2,7 +2,7 @@ import React from 'react'
 import { IoAccessibilityOutline, IoRocketOutline, IoServerOutline } from 'react-icons/io5'
 import { Outlet } from 'react-router-dom'
 import { Footer, Header } from '../'
-import { Aside, TagButton, TopicButton } from '../../components'
+import { Aside, TopicButton } from '../../components'
 
 const HomeLayout = () => {
     return (
