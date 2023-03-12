@@ -1,5 +1,5 @@
-import React from 'react'
-import { BlogCard, Button1 } from '../../components'
+import React, { useState } from 'react'
+import { BlogCard, Button1, PageNumButton } from '../../components'
 
 const blogs = [
   {
@@ -54,6 +54,7 @@ const blogs = [
 ]
 
 const HomeIndex = () => {
+  const [data,setData]= useState([])
   return (
     <>
       <main>
@@ -93,6 +94,7 @@ const HomeIndex = () => {
                 <BlogCard blog={blog} key={blog.id} />
               ))}
             </div>
+            <PageNumButton />
           </div>
         </div>
       </main>

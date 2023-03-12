@@ -4,7 +4,7 @@ import { CardButton, CardTime } from '..'
 
 const BlogCard = ({ blog }) => {
     return (
-        <div className="blog-card-group mb-12">
+        <div className="blog-card-group mb-8 mx-2">
             <div className='blog-card bg-lbp dark:bg-dbp mb-4 p-1 rounded-lg shadow-lg transition-all duration-300 md:hover:-translate-y-1'>
                 <div className="blog-card-banner">
                     <img
