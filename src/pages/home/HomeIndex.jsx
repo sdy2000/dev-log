@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BlogCard, Button1, PageNumButton } from '../../components'
 
 const blogs = [
@@ -54,7 +54,6 @@ const blogs = [
 ]
 
 const HomeIndex = () => {
-  const [data,setData]= useState([])
   return (
     <>
       <main>
