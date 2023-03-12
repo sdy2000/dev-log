@@ -5,7 +5,7 @@ import { SocialIconButton } from '../components'
 
 const Footer = () => {
   return (
-    <footer className='bg-lbp dark:bg-dbp'>
+    <footer className='bg-lbp dark:bg-dbp -mt-8 pt-8'>
       <div className='container px-4 py-8 grid gap-8 border-b-2 border-lfs dark:border-dfs'>
         <div className='wrapper'>
           <a className='logo text-lfp dark:text-dfp text-2xl font-black' href="/">
@@ -45,7 +45,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className='mt-6 md:hidden'>
+      <div className='mt-6 pb-6 md:hidden'>
         <ul className='flex items-center justify-center gap-3'>
           <li><SocialIconButton icon={<FaFacebook />} url="/#" color=' text-blue-700 hover:text-blue-900' /></li>
           <li><SocialIconButton icon={<FaInstagram />} url="/#" color=' text-pink-700 hover:text-pink-900' /></li>
