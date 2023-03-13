@@ -21,8 +21,8 @@ const Header = () => {
         (isOpenList === true) ? setIsOpenList(false) : setIsOpenList(true);
     }
     return (
-        <header>
-            <div className='container bg-lbp dark:bg-dbp'>
+        <header className=' bg-lbp dark:bg-dbp'>
+            <div className='container'>
                 <nav className='navbar flex justify-between items-start gap-3 p-3'>
                     <a className='logo text-lfp dark:text-dfp text-xl font-black' href="/">
                         <span className='text-accent'>DEV</span>

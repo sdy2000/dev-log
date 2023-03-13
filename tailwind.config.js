@@ -43,6 +43,13 @@ module.exports = {
           '2xl': '6rem',
         }
 
+      },
+      screens: {
+        'xs': '550px',
+        // => @media (min-width: 550px) { ... }
+
+        'sm': '650px',
+        // => @media (min-width: 650px) { ... }
       }
     },
   },

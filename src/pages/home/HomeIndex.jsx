@@ -59,13 +59,13 @@ const HomeIndex = () => {
       <main>
         <div className='bg-lbp dark:bg-dbp pt-8 pb-2 text-center'>
           <div className='container'>
-            <div className='left flex flex-col items-center gap-3 pb-14'>
-              <h1 className='text-xl font-black text-lfp dark:text-dfp'>
-                Hi, This is <b className='text-accent'>DEVLog</b>.
+            <div className='left flex flex-col items-center gap-5 pb-14'>
+              <h1 className='text-3xl font-black text-lfp dark:text-dfp'>
+                Hi, This is <b className='text-accent'>DEV</b>Log.
                 <br />
-                Web Developer
+                Web Development
               </h1>
-              <p className='text-base font-semibold text-lfp dark:text-dfp'>Specialized in Full Stack Development</p>
+              <p className='text-base font-semibold text-lfs dark:text-dfs'>Specialized in Full Stack Development</p>
               <div className="btn-group flex justify-center gap-3">
                 <Button1 value={'Contact Us'} href={'#'} />
                 <Button1
@@ -90,7 +90,10 @@ const HomeIndex = () => {
           <div className='contents'>
             {/* <!--==================== BLOG ====================--> */}
             <div className="blog">
-              <h2 className='text-lg text-lfp dark:text-dfp font-bold mb-12 text-center leading-5'>Lastest Blog Post</h2>
+              <h2 className='text-lg text-lfp dark:text-dfp font-bold mb-10 text-center leading-5
+               sm:text-start sm:border-l-4 border-lft sm:ml-6 sm:pl-6'>
+                Lastest Blog Post
+              </h2>
               {blogs.map(blog => (
                 <BlogCard blog={blog} key={blog.id} />
               ))}

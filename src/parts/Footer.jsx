@@ -5,16 +5,16 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'reac
 const Footer = () => {
   return (
     <footer className='bg-lbp dark:bg-dbp pt-8'>
-      <div className='container px-4 py-8 grid gap-8 border-b-2 border-dfs dark:border-lfs'>
-        <div className='wrapper'>
-          <a className='logo text-lfp dark:text-dfp text-2xl font-black' href="/">
+      <div className='container px-4 py-8 grid gap-8 border-b-2 border-dfs dark:border-lfs sm:flex justify-center items-center'>
+        <div className='wrapper sm:w-[50%]'>
+          <a className='sm:text-start text-lfp dark:text-dfp text-2xl font-black' href="/">
             <span className='text-accent'>DEV</span>
             Log
           </a>
-          <p className='text-sm text-lfs dark:text-dfs'>Learn about Web accessibility, Web performance, and Database management.</p>
+          <p className='sm:text-start text-sm text-lfs dark:text-dfs'>Learn about Web accessibility, Web performance, and Database management.</p>
         </div>
 
-        <div className='wrapper'>
+        <div className='wrapper sm:w-[25%]'>
           <p className='footer-title'>Quick Links</p>
           <ul>
             <li>
@@ -29,7 +29,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className='wrapper'>
+        <div className='wrapper sm:w-[25%]'>
           <p className='footer-title'>Legal Stuff</p>
           <ul>
             <li>
@@ -44,7 +44,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className='mt-4 pb-6 md:hidden'>
+      <div className='mt-4 pb-3 md:hidden'>
         <ul className='socail-icons flex items-center justify-center gap-5'>
           <li><a href='/#' className='socail-icon text-blue-700 hover:text-blue-900'><FaFacebook /></a></li>
           <li><a href='/#' className='socail-icon text-pink-700 hover:text-pink-900'><FaInstagram /></a></li>
@@ -53,6 +53,7 @@ const Footer = () => {
           <li><a href='/#' className='socail-icon text-sky-700 hover:text-sky-900'><FaLinkedin /></a></li>
         </ul>
       </div>
+      <p class="text-lfp dark:text-dfp text-center pb-4">&copy; Copyright 2022 <a href="/#"><span className='text-accent'>DEV</span>Log</a></p>
     </footer>
   )
 }
