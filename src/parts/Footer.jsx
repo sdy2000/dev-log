@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa'
+import { SocialBox } from '../components'
 
 const Footer = () => {
   return (
@@ -45,15 +45,9 @@ const Footer = () => {
         </div>
       </div>
       <div className='mt-4 pb-3 md:hidden'>
-        <ul className='socail-icons flex items-center justify-center gap-5'>
-          <li><a href='/#' className='socail-icon text-blue-700 hover:text-blue-900'><FaFacebook /></a></li>
-          <li><a href='/#' className='socail-icon text-pink-700 hover:text-pink-900'><FaInstagram /></a></li>
-          <li><a href='/#' className='socail-icon text-blue-600 hover:text-blue-8900'><FaTwitter /></a></li>
-          <li><a href='/#' className='socail-icon text-green-700 hover:text-green-900'><FaWhatsapp /></a></li>
-          <li><a href='/#' className='socail-icon text-sky-700 hover:text-sky-900'><FaLinkedin /></a></li>
-        </ul>
+        <SocialBox styles={'socail-icons flex items-center justify-center gap-5'} />
       </div>
-      <p class="text-lfp dark:text-dfp text-center pb-4">&copy; Copyright 2022 <a href="/#"><span className='text-accent'>DEV</span>Log</a></p>
+      <p class="text-lfp dark:text-dfp text-center pb-4 md:mt-4">&copy; Copyright 2022 <a href="/#"><span className='text-accent'>DEV</span>Log</a></p>
     </footer>
   )
 }

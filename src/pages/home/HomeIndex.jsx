@@ -91,7 +91,7 @@ const HomeIndex = () => {
             {/* <!--==================== BLOG ====================--> */}
             <div className="blog">
               <h2 className='text-lg text-lfp dark:text-dfp font-bold mb-10 text-center leading-5
-               sm:text-start sm:border-l-4 border-lft sm:ml-6 sm:pl-6'>
+               sm:text-start sm:border-l-4 border-lft sm:pl-6  sm:max-w-2xl m-auto'>
                 Lastest Blog Post
               </h2>
               {blogs.map(blog => (

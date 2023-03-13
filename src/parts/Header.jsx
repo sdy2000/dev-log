@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { IconButton, ThemeButton } from '../components'
+import { IconButton, SocialBox, ThemeButton } from '../components'
 import { BsList } from 'react-icons/bs'
 import { IoMdClose } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 import '../assets/global.css'
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 
 const Header = () => {
     const [isOpenList, setIsOpenList] = useState(false);
@@ -87,13 +86,8 @@ const Header = () => {
                         </div>
 
                         <div className='ml-[10%]'>
-                            <ul className='socail-icons flex items-center justify-start gap-3'>
-                                <li><a href='/#' className='socail-icon text-blue-700 hover:text-blue-900'><FaFacebook /></a></li>
-                                <li><a href='/#' className='socail-icon text-pink-700 hover:text-pink-900'><FaInstagram /></a></li>
-                                <li><a href='/#' className='socail-icon text-blue-600 hover:text-blue-8900'><FaTwitter /></a></li>
-                                <li><a href='/#' className='socail-icon text-green-700 hover:text-green-900'><FaWhatsapp /></a></li>
-                                <li><a href='/#' className='socail-icon text-sky-700 hover:text-sky-900'><FaLinkedin /></a></li>
-                            </ul>
+                            <SocialBox styles={'socail-icons flex items-center justify-center gap-3'} />
+
                         </div>
                     </div>
                 </nav>

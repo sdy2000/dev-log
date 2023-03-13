@@ -11,6 +11,7 @@ export {default as TopicButton} from './button/TopicButton'
 // // // // Card // // // //
 export {default as BlogCard} from './card/BlogCard'
 export {default as Aside} from './card/Aside'
+export {default as SocialBox} from './card/SocialBox'
 
 
 

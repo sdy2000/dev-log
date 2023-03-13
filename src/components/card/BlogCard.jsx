@@ -6,7 +6,7 @@ const BlogCard = ({ blog }) => {
     return (
         <div className="mb-2 mx-4">
             <div className='bg-lbp dark:bg-dbp mb-4 p-2 rounded-lg shadow-lg transition-all duration-300 md:hover:-translate-y-1
-            xs:grid grid-cols-5 xs:p-1'>
+            xs:grid grid-cols-5 xs:p-1 sm:max-w-2xl m-auto'>
                 <div className="col-span-2">
                     <img
                         className='blog-banner-img xs:rounded-md w-full h-full object-cover'
@@ -22,7 +22,7 @@ const BlogCard = ({ blog }) => {
                         </Link>
                     </h3>
                     <p className='hidden text-xs text-lfs tracking-wide leading-relaxed max-h-20 overflow-clip dark:text-dfs
-                     sm:inline-block'>
+                     sm:inline-block md:text-sm'>
                         {blog.blogDescription}
                     </p>
                     <div className="wrapper-flex sm:flex justify-start gap-2">
