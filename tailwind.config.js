@@ -8,7 +8,7 @@ module.exports = {
         // // // Light Mode // // / 
         // Backround
         "lbp": "#ffffff",
-        "lbs": "#f5faff",
+        "lbs": "#f0f0ff",
         // Action
         "lap": "#d5e2f1",
         "las": "#e7f0f8",

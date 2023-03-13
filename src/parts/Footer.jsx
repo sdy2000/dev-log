@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa'
-import { SocialIconButton } from '../components'
 
 const Footer = () => {
   return (
-    <footer className='bg-lbp dark:bg-dbp -mt-8 pt-8'>
-      <div className='container px-4 py-8 grid gap-8 border-b-2 border-lfs dark:border-dfs'>
+    <footer className='bg-lbp dark:bg-dbp pt-8'>
+      <div className='container px-4 py-8 grid gap-8 border-b-2 border-dfs dark:border-lfs'>
         <div className='wrapper'>
           <a className='logo text-lfp dark:text-dfp text-2xl font-black' href="/">
             <span className='text-accent'>DEV</span>
@@ -45,13 +44,13 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className='mt-6 pb-6 md:hidden'>
-        <ul className='flex items-center justify-center gap-3'>
-          <li><SocialIconButton icon={<FaFacebook />} url="/#" color=' text-blue-700 hover:text-blue-900' /></li>
-          <li><SocialIconButton icon={<FaInstagram />} url="/#" color=' text-pink-700 hover:text-pink-900' /></li>
-          <li><SocialIconButton icon={<FaTwitter />} url="/#" color=' text-blue-600 hover:text-blue-800' /></li>
-          <li><SocialIconButton icon={<FaWhatsapp />} url="/#" color=' text-green-700 hover:text-green-900' /></li>
-          <li><SocialIconButton icon={<FaLinkedin />} url="/#" color=' text-sky-700 hover:text-sky-900' /></li>
+      <div className='mt-4 pb-6 md:hidden'>
+        <ul className='socail-icons flex items-center justify-center gap-5'>
+          <li><a href='/#' className='socail-icon text-blue-700 hover:text-blue-900'><FaFacebook /></a></li>
+          <li><a href='/#' className='socail-icon text-pink-700 hover:text-pink-900'><FaInstagram /></a></li>
+          <li><a href='/#' className='socail-icon text-blue-600 hover:text-blue-8900'><FaTwitter /></a></li>
+          <li><a href='/#' className='socail-icon text-green-700 hover:text-green-900'><FaWhatsapp /></a></li>
+          <li><a href='/#' className='socail-icon text-sky-700 hover:text-sky-900'><FaLinkedin /></a></li>
         </ul>
       </div>
     </footer>

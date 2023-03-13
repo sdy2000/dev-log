@@ -5,10 +5,10 @@
 @layer components{
     /*--------------- Header ----------------*/
     .mobile-nav-wrapper{
-        @apply pb-5 mb-5 border-b border-b-lap dark:border-b-dap
+        @apply pb-5 mb-8 border-b border-b-dft
     }
     .mobile-nav-wrapper .title{
-        @apply text-xl font-extrabold text-lfp mb-4
+        @apply text-xl font-extrabold text-lfp dark:text-dfp mb-4
     }
     .mobile-nav-wrapper ul li{
         @apply mb-2
@@ -26,6 +26,12 @@
         @apply text-lg font-extrabold text-lfp dark:text-dfp
     }
     .wrapper .footer-link{
-        @apply text-base text-lfs dark:text-dfs
+        @apply text-sm text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300
+    }
+    .socail-icons li{
+        @apply text-xl p-2 rounded-full hover:bg-lft dark:hover:bg-dft transition-all duration-300
+    }
+    .socail-icon{
+        @apply text-xl
     }
 }

@@ -2,17 +2,17 @@ import React from 'react'
 import { IoAccessibilityOutline, IoRocketOutline, IoServerOutline } from 'react-icons/io5'
 import { Outlet } from 'react-router-dom'
 import { Footer, Header } from '../'
-import { Aside, TopicButton } from '../../components'
+import { Aside, Button1, TopicButton } from '../../components'
 
 const HomeLayout = () => {
     return (
         <>
             <Header />
-            <div className='grid grid-cols-12 pb-8'>
+            <div className='grid grid-cols-12 pb-12  bg-lbs dark:bg-dbs'>
                 <div className='col-span-12 md:col-span-8'>
                     <Outlet />
                 </div>
-                <div className='col-span-12 md:col-span-4 bg-lbs dark:bg-dbs'>
+                <div className='col-span-12 md:col-span-4'>
                     <div className='md:sticky relative top-5'>
                         <div className='aside'>
                             <Aside title={'Topics'}>
@@ -39,6 +39,9 @@ const HomeLayout = () => {
                                     readOnly
                                     type='text'
                                     value="http://localhost:3000/suyrs"
+                                />
+                                <Button1
+                                    value={'Copy URL'}
                                 />
                             </Aside>
 

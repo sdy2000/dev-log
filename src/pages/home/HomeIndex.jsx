@@ -59,7 +59,7 @@ const HomeIndex = () => {
       <main>
         <div className='bg-lbp dark:bg-dbp pt-8 pb-2 text-center'>
           <div className='container'>
-            <div className='left flex flex-col items-center gap-3'>
+            <div className='left flex flex-col items-center gap-3 pb-14'>
               <h1 className='text-xl font-black text-lfp dark:text-dfp'>
                 Hi, This is <b className='text-accent'>DEVLog</b>.
                 <br />
@@ -68,7 +68,9 @@ const HomeIndex = () => {
               <p className='text-base font-semibold text-lfp dark:text-dfp'>Specialized in Full Stack Development</p>
               <div className="btn-group flex justify-center gap-3">
                 <Button1 value={'Contact Us'} href={'#'} />
-                <Button1 value={'About Us'} href={'#'} color={'bg-lfs hover:bg-lft text-white dark:bg-dfs dark:hover:bg-dft dark:text-black'} />
+                <Button1
+                  value={'About Us'} href={'#'}
+                  color={'bg-lbs text-lfs dark:bg-dbp hover:border-accent hover:text-accent dark:hover:border-accent dark:hover:text-accent dark:text-dfs  border-lft'} />
               </div>
             </div>
             <div className="right hidden">
@@ -88,7 +90,7 @@ const HomeIndex = () => {
           <div className='contents'>
             {/* <!--==================== BLOG ====================--> */}
             <div className="blog">
-              <h2 className='text-lg font-bold mb-12 text-center leading-5'>Lastest Blog Post</h2>
+              <h2 className='text-lg text-lfp dark:text-dfp font-bold mb-12 text-center leading-5'>Lastest Blog Post</h2>
               {blogs.map(blog => (
                 <BlogCard blog={blog} key={blog.id} />
               ))}

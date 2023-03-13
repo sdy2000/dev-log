@@ -4,8 +4,8 @@ import { CardButton, CardTime } from '..'
 
 const BlogCard = ({ blog }) => {
     return (
-        <div className="blog-card-group mb-8 mx-2">
-            <div className='blog-card bg-lbp dark:bg-dbp mb-4 p-1 rounded-lg shadow-lg transition-all duration-300 md:hover:-translate-y-1'>
+        <div className="blog-card-group mb-2 mx-4">
+            <div className='blog-card bg-lbp dark:bg-dbp mb-4 p-2 rounded-lg shadow-lg transition-all duration-300 md:hover:-translate-y-1'>
                 <div className="blog-card-banner">
                     <img
                         className='blog-banner-img'
@@ -15,7 +15,7 @@ const BlogCard = ({ blog }) => {
                 <div className='py-2 px-1'>
                     <CardButton text={blog.topic} href={blog.slug} />
                     <h3 className='leading-6 my-4'>
-                        <Link to="#" className='text-base font-extrabold hover:decoration-2 hover:underline transition-all duration-300'>
+                        <Link to="#" className='text-lfp dark:text-dfp font-extrabold hover:decoration-2 hover:underline transition-all duration-300'>
                             {blog.blogShortDescription}
                         </Link>
                     </h3>

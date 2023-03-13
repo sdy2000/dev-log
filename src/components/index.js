@@ -6,7 +6,6 @@ export {default as CardButton} from './button/CardButton'
 export {default as PageNumButton} from './button/PageNumButton'
 export {default as NumberButton} from './button/NumberButton'
 export {default as TopicButton} from './button/TopicButton'
-export {default as SocialIconButton} from './button/SocialIconButton'
 
 
 // // // // Card // // // //
