@@ -32,4 +32,13 @@ body {
 /*=============== Base ===============*/
 .mobile-nav {
   transition: 0.7s cubic-bezier(1, 0, 0.3, 0.7);
+}
+
+.pattern-bg {
+  background-image: url("/public/assets/img/pattern.png");
+  position: absolute;
+  top: -160px;
+  right: 20px;
+  width: 360px;
+  height: 365px;
 }/*# sourceMappingURL=styles.css.map */

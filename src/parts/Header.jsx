@@ -10,7 +10,7 @@ const Header = () => {
 
     useEffect(() => {
         window.addEventListener('resize', () => {
-            if (window.innerWidth >= 640) {
+            if (window.innerWidth >= 768) {
                 setIsOpenList(false);
             }
         })
@@ -22,7 +22,7 @@ const Header = () => {
     return (
         <header className=' bg-lbp dark:bg-dbp'>
             <div className='container'>
-                <nav className='navbar flex justify-between items-start gap-3 p-3'>
+                <nav className='navbar flex justify-between items-start gap-3 p-3 md:pt-8'>
                     <a className='logo text-lfp dark:text-dfp text-xl font-black' href="/">
                         <span className='text-accent'>DEV</span>
                         Log
@@ -46,7 +46,7 @@ const Header = () => {
                     </div>
 
                     <div className={`mobile-nav fixed inset-0 bg-lbp dark:bg-dbp py-16 px-5 overflow-auto
-                     overscroll-contain z-10 border-l-2 border-l-las dark:border-l-lft
+                     overscroll-contain z-10 border-l-2 border-l-las dark:border-l-lft md:hidden
                      ${!isOpenList ? 'translate-x-[100%] invisible' : 'translate-x-[20%] visible'}`}>
                         <span onClick={OpenList} className='nav-close-btn absolute top-5 right-[25%]'>
                             <IconButton value={<IoMdClose />} />

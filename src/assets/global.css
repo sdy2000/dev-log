@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components{
+    body{
+        @apply bg-lbs dark:bg-dbs
+    }
+
     /*--------------- Header ----------------*/
     .mobile-nav-wrapper{
         @apply pb-5 mb-8 border-b border-b-dft
@@ -19,9 +23,9 @@
 
 
     /*--------------- TopBar ----------------*/
-    /* .circle-shap{
-        @apply w-80 h-80 bg-red-600 absolute top-8 right-0 rounded-full
-    } */
+    .circle-shap{
+        @apply w-72 h-72 absolute rounded-full xl:w-[310px] xl:h-[310px]
+    }
 
     /*--------------- Footer ----------------*/
     .container .wrapper{
