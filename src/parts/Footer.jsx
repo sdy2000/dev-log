@@ -47,7 +47,7 @@ const Footer = () => {
       <div className='mt-4 pb-3 md:hidden'>
         <SocialBox styles={'socail-icons flex items-center justify-center gap-5'} />
       </div>
-      <p class="text-lfp dark:text-dfp text-center pb-4 md:mt-4">&copy; Copyright 2022 <a href="/#"><span className='text-accent'>DEV</span>Log</a></p>
+      <p className="text-lfp dark:text-dfp text-center pb-4 md:mt-4">&copy; Copyright 2022 <a href="/#"><span className='text-accent'>DEV</span>Log</a></p>
     </footer>
   )
 }
