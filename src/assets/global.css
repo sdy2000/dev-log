@@ -17,6 +17,12 @@
         @apply text-base text-lfs dark:text-dfs transition-all duration-300 hover:text-accent dark:hover:text-accent
     }
 
+
+    /*--------------- TopBar ----------------*/
+    /* .circle-shap{
+        @apply w-80 h-80 bg-red-600 absolute top-8 right-0 rounded-full
+    } */
+
     /*--------------- Footer ----------------*/
     .container .wrapper{
         @apply text-center flex flex-col gap-3

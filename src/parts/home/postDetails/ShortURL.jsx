@@ -1,5 +1,5 @@
 import React from 'react'
-import { Aside, Button1 } from '../../components'
+import { Aside, Button1 } from '../../../components'
 
 const ShortURL = () => {
   return (

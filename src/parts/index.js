@@ -10,5 +10,12 @@ export {default as Footer} from './Footer';
 // // // // Home Parts // // // // 
 export {default as Categores} from './home/Categores';
 export {default as Topics} from './home/Topics';
-export {default as ShortURL} from './home/ShortURL';
+
+
+// // // // Home Page // // // // 
+export {default as TopBar} from './home/homePage/TopBar';
+
+
+// // // // Post Detail // // // // 
+export {default as ShortURL} from './home/postDetails/ShortURL';
 
