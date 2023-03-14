@@ -11,7 +11,7 @@ const HomeLayout = () => {
             {!slug && (
                 <TopBar />
             )}
-            <div className='hidden  md:inline-block fixed left-0 top-[35%] z-20 bg-lbp dark:bg-dbp px-1 py-4 rounded-r-xl shadow-xl'>
+            <div className='hidden md:inline-block fixed left-0 top-[35%] z-20 bg-lbp dark:bg-dbp px-1 py-4 rounded-r-xl shadow-xl'>
                 <SocialBox styles={'socail-icons flex flex-col items-center justify-center gap-3'} />
             </div>
             <div className='grid grid-cols-11 pb-12  bg-lbs dark:bg-dbs max-w-7xl m-auto'>
