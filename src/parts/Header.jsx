@@ -4,6 +4,7 @@ import { BsChevronDown, BsList } from 'react-icons/bs'
 import { IoMdClose } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 import '../assets/global.css'
+import useScrollDirection from '../utils/windowEvent/useScrollDirection'
 
 const categores = [
     {
@@ -43,9 +44,11 @@ const categores = [
 const Header = () => {
     const [isOpenList, setIsOpenList] = useState(false);
     const [clickStates, setClickStates] = useState({})
+    const scrollDirection = useScrollDirection();
+
 
     const handleOnClick = (id) => {
-        if (clickStates[id] ===true) {
+        if (clickStates[id] === true) {
             setClickStates({
                 [id]: false
             });
@@ -69,9 +72,10 @@ const Header = () => {
         (isOpenList === true) ? setIsOpenList(false) : setIsOpenList(true);
     }
     return (
-        <header className=' bg-lbp dark:bg-dbp'>
+        <header className={`sticky ${ scrollDirection === "down" ? "-top-24" : "top-0"}
+         h-14 transition-all duration-500 bg-lbp dark:bg-dbp z-30`}>
             <div className='container'>
-                <nav className='navbar flex justify-between items-start gap-3 p-3 md:pt-8'>
+                <nav className='navbar flex justify-between items-start gap-3 p-3 md:pb-1'>
                     <div className='flex justify-center items-center gap-6'>
                         <a className='logo text-lfp dark:text-dfp text-xl xl:text-3xl font-black' href="/">
                             <span className='text-accent'>DEV</span>

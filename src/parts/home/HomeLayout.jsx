@@ -6,6 +6,7 @@ import BottonNavBar from './BottonNavBar'
 
 const HomeLayout = () => {
     const { slug } = useParams();
+    console.log(window.onscroll);
     return (
         <>
             <Header />
