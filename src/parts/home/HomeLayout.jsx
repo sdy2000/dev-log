@@ -6,7 +6,6 @@ import BottonNavBar from './BottonNavBar'
 
 const HomeLayout = () => {
     const { slug } = useParams();
-    console.log(window.onscroll);
     return (
         <>
             <Header />
@@ -15,8 +14,8 @@ const HomeLayout = () => {
             )}
             <BottonNavBar />
             <div className='grid grid-cols-12 pb-12  bg-lbs dark:bg-dbs max-w-7xl m-auto'>
-                <div className='hidden md:inline col-span-1'>
-                    <div className='sticky top-60 w-12 z-20 bg-lbp dark:bg-dbp px-1 py-4 rounded-r-xl shadow-xl'>
+                <div className='hidden md:inline col-span-12 lg:col-span-1'>
+                    <div className='md:fixed lg:sticky md:top-40 lg:top-60 w-12 z-20 bg-lbp dark:bg-dbp px-1 py-4 rounded-r-xl shadow-xl'>
                         <SocialBox styles={'socail-icons flex flex-col items-center justify-center gap-3'} />
                     </div>
                 </div>
