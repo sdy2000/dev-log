@@ -20,10 +20,16 @@ const categores = [
     {
         id: 3,
         category: 'Mobile Development ',
+        subCategores: [
+            'React Nativ', 'Zamarin', 'Katlin', 'Java'
+        ]
     },
     {
         id: 4,
         category: 'Language',
+        subCategores: [
+            'C#', 'JavaScript', 'Phayton', 'Java'
+        ]
     },
     {
         id: 5,

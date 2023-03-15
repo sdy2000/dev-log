@@ -26,7 +26,15 @@
     .accounting li{
         @apply font-semibold text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300
     }
-
+    .header-bar li a{
+        @apply flex justify-start items-center gap-2
+    }
+    .header-sub-bar{
+        @apply flex flex-col justify-center items-start mt-2 
+    }
+    .header-sub-bar li{
+        @apply inline-block hover:bg-lft w-full pl-4 rounded-xl px-2 py-1
+    }
 
     /*--------------- TopBar ----------------*/
     .circle-shap{

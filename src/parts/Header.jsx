@@ -1,12 +1,61 @@
 import React, { useEffect, useState } from 'react'
 import { IconButton, SocialBox, ThemeButton } from '../components'
-import { BsList } from 'react-icons/bs'
+import { BsChevronDown, BsList } from 'react-icons/bs'
 import { IoMdClose } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 import '../assets/global.css'
 
+const categores = [
+    {
+        id: 1,
+        category: 'Database',
+        subCategores: [
+            'MS SQL Server', 'Mongo DB', 'My SQL Server', 'Apache'
+        ]
+    },
+    {
+        id: 2,
+        category: 'Web Development',
+        subCategores: [
+            'React.js', 'Node.js', '.Net Core', 'Jango'
+        ]
+    },
+    {
+        id: 3,
+        category: 'Mobile Development',
+        subCategores: [
+            'React Nativ', 'Zamarin', 'Katlin', 'Java'
+        ]
+    },
+    {
+        id: 4,
+        category: 'Language',
+        subCategores: [
+            'C#', 'JavaScript', 'Phayton', 'Java'
+        ]
+    },
+    {
+        id: 5,
+        category: 'SEO',
+    },
+]
+
 const Header = () => {
     const [isOpenList, setIsOpenList] = useState(false);
+    const [clickStates, setClickStates] = useState({})
+
+    const handleOnClick = (id) => {
+        if (clickStates[id] ===true) {
+            setClickStates({
+                [id]: false
+            });
+        }
+        else {
+            setClickStates({
+                [id]: !false
+            });
+        }
+    };
 
     useEffect(() => {
         window.addEventListener('resize', () => {
@@ -91,12 +140,25 @@ const Header = () => {
                         </div>
                         <div className='mobile-nav-wrapper'>
                             <h3 className='title'>Topics</h3>
-                            <ul>
-                                <li><Link to="#">Database</Link></li>
-                                <li><Link to="#">.Net Core</Link></li>
-                                <li><Link to="#">React</Link></li>
-                                <li><Link to="#">SQL Server</Link></li>
-                                <li><Link to="#">SEO</Link></li>
+                            <ul className='header-bar flex flex-col justify-center items-start gap-2 text-lfp dark:text-dfp'>
+                                {
+                                    categores.map((cat) => (
+                                        <li
+                                            onClick={() => handleOnClick(cat.id)}
+                                            key={cat.id} id={cat.id}>
+                                            <Link to="#">{cat.category} {cat.subCategores && (<BsChevronDown />)}</Link>
+                                            {cat.subCategores && (
+                                                <ul className={`${!clickStates[cat.id] && 'hidden'} header-sub-bar`}>
+                                                    {cat.subCategores.map((subCat, idx) => (
+                                                        <li key={idx}>
+                                                            <Link to='/#'>{subCat}</Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </li>
+                                    ))
+                                }
                             </ul>
                         </div>
 
