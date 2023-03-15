@@ -32,6 +32,15 @@
     .circle-shap{
         @apply w-72 h-72 absolute rounded-full xl:w-[310px] xl:h-[310px]
     }
+    .botton-bar li{
+        @apply relative
+    }
+    .botton-bar li a{
+        @apply  hover:text-accent dark:hover:text-accent transition-all duration-300 font-semibold flex justify-center items-center gap-1
+    }
+    .sub-bar {
+        @apply border border-black absolute top-6 left-6 px-10  bg-dfs dark:bg-lfs rounded-md
+    }
 
     /*--------------- Footer ----------------*/
     .container .wrapper{

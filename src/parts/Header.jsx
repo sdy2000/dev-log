@@ -28,9 +28,13 @@ const Header = () => {
                             <span className='text-accent'>DEV</span>
                             Log
                         </a>
-                        <span className='hidden lg:inline-block'>
-                            <ThemeButton />
-                        </span>
+                        <ul className='desktop-nav  hidden lg:flex justify-center items-center gap-6 ml-12'>
+                            <li><Link to="#">Home</Link></li>
+                            <li><Link to="#">Blogs</Link></li>
+                            <li><Link to="#">Cooperation with DEVLog</Link></li>
+                            <li><Link to="#">About Us</Link></li>
+                            <li><Link to="#">Contact</Link></li>
+                        </ul>
                     </div>
 
 
@@ -42,11 +46,10 @@ const Header = () => {
                     </div>
 
                     <div className='flex-wrapper hidden lg:flex justify-center items-center gap-12'>
-                        <ul className='desktop-nav flex justify-center items-center gap-6 mr-12'>
-                            <li><Link to="#">Home</Link></li>
-                            <li><Link to="#">About Us</Link></li>
-                            <li><Link to="#">Contact</Link></li>
-                        </ul>
+
+                        <span className='hidden lg:inline-block'>
+                            <ThemeButton />
+                        </span>
 
                         <ul className='accounting flex justify-start items-center gap-2'>
                             <li><Link to="#">Login</Link></li>
@@ -80,6 +83,8 @@ const Header = () => {
                             <h3 className='title'>Main Menu</h3>
                             <ul>
                                 <li><Link to="#">Home</Link></li>
+                                <li><Link to="#">Blogs</Link></li>
+                                <li><Link to="#">Cooperation with DEVLog</Link></li>
                                 <li><Link to="#">About Us</Link></li>
                                 <li><Link to="#">Contact</Link></li>
                             </ul>

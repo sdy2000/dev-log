@@ -2,6 +2,7 @@ import React from 'react'
 import { Outlet, useParams } from 'react-router-dom'
 import { Categores, Footer, Header, TopBar, Topics } from '../'
 import { SocialBox } from '../../components'
+import BottonNavBar from './BottonNavBar'
 
 const HomeLayout = () => {
     const { slug } = useParams();
@@ -11,6 +12,7 @@ const HomeLayout = () => {
             {!slug && (
                 <TopBar />
             )}
+            <BottonNavBar />
             <div className='hidden md:inline-block fixed left-0 top-[35%] z-20 bg-lbp dark:bg-dbp px-1 py-4 rounded-r-xl shadow-xl'>
                 <SocialBox styles={'socail-icons flex flex-col items-center justify-center gap-3'} />
             </div>
