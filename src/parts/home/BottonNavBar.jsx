@@ -19,11 +19,11 @@ const categores = [
     },
     {
         id: 3,
-        category: 'React ',
+        category: 'Mobile Development ',
     },
     {
         id: 4,
-        category: 'SQL Server',
+        category: 'Language',
     },
     {
         id: 5,
@@ -32,19 +32,29 @@ const categores = [
 ]
 
 const BottonNavBar = () => {
-    const [isOpenList, setIsOpenList] = useState(false)
 
+    const [hoverStates, setHoverStates] = useState({})
+
+    const handleMouseOver = (id) => {
+        setHoverStates({
+            [id]: true
+        });
+    };
+    const handleMouseLeave = (id) => {
+        setHoverStates({
+            [id]: false
+        });
+    };
     return (
-        <div className='w-full bg-dfs dark:bg-lfs px-12 py-2'>
+        <div className=' hidden lg:inline-block w-full bg-dfs dark:bg-lfs px-12 py-2'>
 
             <ul className='botton-bar flex justify-start items-center gap-5 ml-12 text-lfp dark:text-dfp'>
                 {
                     categores.map((cat) => (
-                        <li onMouseEnter={() => setIsOpenList(true)} onMouseLeave={() => setIsOpenList(false)} key={cat.id}>
-                            <Link to="#">{cat.category} {cat.subCategores && (<BsChevronDown />) }</Link>
-
+                        <li onMouseEnter={()=>handleMouseOver(cat.id)} onMouseLeave={()=>handleMouseLeave(cat.id)} key={cat.id} id={cat.id}>
+                            <Link to="#">{cat.category} {cat.subCategores && (<BsChevronDown />)}</Link>
                             {cat.subCategores && (
-                                <ul className={`${!isOpenList && 'hidden'} sub-bar`}>
+                                <ul className={`${!hoverStates[cat.id] && 'hidden'} sub-bar`}>
                                     {cat.subCategores.map((subCat, idx) => (
                                         <li key={idx}>
                                             <Link to='/#'>{subCat}</Link>
