@@ -73,16 +73,15 @@ const Header = () => {
             <div className='container'>
                 <nav className='navbar flex justify-between items-start gap-3 p-3 md:pt-8'>
                     <div className='flex justify-center items-center gap-6'>
-                        <a className='logo text-lfp dark:text-dfp text-xl font-black' href="/">
+                        <a className='logo text-lfp dark:text-dfp text-xl xl:text-3xl font-black' href="/">
                             <span className='text-accent'>DEV</span>
                             Log
                         </a>
                         <ul className='desktop-nav  hidden lg:flex justify-center items-center gap-6 ml-12'>
                             <li><Link to="#">Home</Link></li>
                             <li><Link to="#">Blogs</Link></li>
-                            <li><Link to="#">Cooperation with DEVLog</Link></li>
                             <li><Link to="#">About Us</Link></li>
-                            <li><Link to="#">Contact</Link></li>
+                            <li><Link to="#">Contact Us</Link></li>
                         </ul>
                     </div>
 

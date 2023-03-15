@@ -21,7 +21,7 @@
         @apply text-base text-lfs dark:text-dfs transition-all duration-300 hover:text-accent dark:hover:text-accent
     }
     .desktop-nav li{
-        @apply text-lg font-bold text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300
+        @apply xl:text-lg font-bold text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300
     }
     .accounting li{
         @apply font-semibold text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300
