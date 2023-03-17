@@ -10,6 +10,7 @@ export {default as Footer} from './Footer';
 // // // // Home Parts // // // // 
 export {default as Categores} from './home/Categores';
 export {default as Topics} from './home/Topics';
+export {default as BottomNavBar} from './home/BottomNavBar';
 
 
 // // // // Home Page // // // // 
