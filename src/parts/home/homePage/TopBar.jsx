@@ -28,7 +28,7 @@ const TopBar = () => {
 
                         <img
                             className=' rounded-full max-w-[283px] absolute -top-[173px] right-[67px]
-                             xl:max-w-[320px] xl:-top-48 xl:right-12'
+                             xl:max-w-[320px] xl:-top-[190px] xl:right-[51px]'
                             src="/assets/img/about.png"
                             alt="User Avatar Img" />
                     </div>
