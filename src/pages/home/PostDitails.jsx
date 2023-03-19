@@ -1,6 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PostComment } from '../../parts'
+import { CommetnDitail, PostComment } from '../../parts'
+
+const comments = [
+    {id:1,userName:'ali',userComment:'I liked, very good!!',userAvatar:'',createDate:'2023/12/3'},
+    {id:2,userName:'sara',userComment:'very very very gooooood.',userAvatar:'',createDate:'2023/1/25'},
+    {id:3,userName:'maryam',userComment:'not bad!',userAvatar:'',createDate:'2023/9/12'},
+    {id:4,userName:'ataback',userComment:'I liked!!',userAvatar:'',createDate:'2023/5/13'},
+]
 
 const PostDitails = () => {
     return (
@@ -84,6 +91,7 @@ const PostDitails = () => {
                         </div>
                     </div>
                     <PostComment />
+                    <CommetnDitail comments={comments} />
                 </div>
             </div>
         </main>

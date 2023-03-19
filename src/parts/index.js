@@ -20,4 +20,5 @@ export {default as TopBar} from './home/homePage/TopBar';
 // // // // Post Detail // // // // 
 export {default as ShortURL} from './home/postDetails/ShortURL';
 export {default as PostComment} from './home/postDetails/PostComment';
+export {default as CommetnDitail} from './home/postDetails/CommetnDitail';
 
