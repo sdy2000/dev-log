@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomeLayout } from "./parts";
-import { HomeIndex } from "./pages";
+import { HomeIndex, PostDitails } from "./pages";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
         <Routes>
           <Route element={<HomeLayout />}>
             <Route path="/" element={<HomeIndex />} />
+            <Route path="/:slug" element={<PostDitails />} />
           </Route>
           {/* <Route path="UserPanel" element={<UserLayout />} /> */}
           {/* <Route path="/AdminPanel" element={<AdminLaout />} /> */}
