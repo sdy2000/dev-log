@@ -70,4 +70,14 @@
     .socail-icon{
         @apply text-xl
     }
+
+
+    /*--------------- Comment ----------------*/
+    .post-ditail-card{
+        @apply bg-lbp dark:bg-dbp rounded-xl shadow-lg px-2 py-4 mx-3 flex justify-start flex-col gap-4 md:gap-8 pb-8 mb-12
+    }
+    .post-ditail-comment{
+        @apply text-lfp dark:text-dfp bg-lbp dark:bg-dbp px-3 py-1 border-2 border-lfs
+        dark:border-dft rounded-lg outline-none placeholder:text-lft w-full
+    }
 }

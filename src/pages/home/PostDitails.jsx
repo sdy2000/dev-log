@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { PostComment } from '../../parts'
 
 const PostDitails = () => {
     return (
         <main>
-            <div className="main bg-lbs dark:bg-dbs py-20" >
+            <div className="main bg-lbs dark:bg-dbs py-20 md:mr-8 lg:mr-0" >
                 <div className='contents'>
                     <h2 className='text-lg text-lfp dark:text-dfp font-bold mb-10 text-center leading-5
                             sm:text-start sm:border-l-4 border-lft sm:pl-6  sm:max-w-2xl m-auto'>
                         Post Ditails
                     </h2>
-                    <div className='bg-lbp dark:bg-dbp rounded-xl shadow-lg px-2 py-4 mx-3 flex justify-start flex-col gap-4 md:gap-8'>
+                    <div className='post-ditail-card'>
                         <img
                             className='w-full rounded-t-lg'
                             src={`/assets/img/blog-1.png`}
@@ -82,6 +83,7 @@ const PostDitails = () => {
                             </div>
                         </div>
                     </div>
+                    <PostComment />
                 </div>
             </div>
         </main>
