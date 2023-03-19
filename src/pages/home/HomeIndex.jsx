@@ -3,49 +3,49 @@ import { BlogCard, PageNumButton } from '../../components'
 
 const blogs = [
   {
-    id: 1, blogName: 'MongoDB', blogImage: 'blog-1.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-03-11', topic: 'Database', slug: '#',
+    id: 1, blogName: 'MongoDB', blogImage: 'blog-1.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-03-11', topic: 'Database', slug: 'MongoDB',
     blogDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aspernatur laboriosam quos optio tempora distinctio quibusdam odit ut, magnam voluptatum esse magni ipsam dolorum iusto id temporibus dolores saepe repellat!',
     author: {
       authorName: 'sajad', authorImage: 'sdy2000.jpg'
     },
   },
   {
-    id: 2, blogName: 'MongoDB', blogImage: 'blog-2.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-04-21', topic: 'Database', slug: '#',
+    id: 2, blogName: 'Time-out', blogImage: 'blog-2.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-04-21', topic: 'Database', slug: 'Time-out',
     blogDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aspernatur laboriosam quos optio tempora distinctio quibusdam odit ut, magnam voluptatum esse magni ipsam dolorum iusto id temporibus dolores saepe repellat!',
     author: {
       authorName: 'sajad', authorImage: 'sdy2000.jpg'
     }
   },
   {
-    id: 3, blogName: 'MongoDB', blogImage: 'blog-3.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2022-05-31', topic: 'Database', slug: '#',
+    id: 3, blogName: 'coding', blogImage: 'blog-3.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2022-05-31', topic: 'Database', slug: 'coding',
     blogDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aspernatur laboriosam quos optio tempora distinctio quibusdam odit ut, magnam voluptatum esse magni ipsam dolorum iusto id temporibus dolores saepe repellat!',
     author: {
       authorName: 'sajad', authorImage: 'sdy2000.jpg'
     }
   },
   {
-    id: 4, blogName: 'MongoDB', blogImage: 'blog-4.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-07-11', topic: 'Database', slug: '#',
+    id: 4, blogName: 'Database', blogImage: 'blog-4.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-07-11', topic: 'Database', slug: 'Database',
     blogDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aspernatur laboriosam quos optio tempora distinctio quibusdam odit ut, magnam voluptatum esse magni ipsam dolorum iusto id temporibus dolores saepe repellat!',
     author: {
       authorName: 'sajad', authorImage: 'sdy2000.jpg'
     }
   },
   {
-    id: 5, blogName: 'MongoDB', blogImage: 'blog-5.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-02-14', topic: 'Database', slug: '#',
+    id: 5, blogName: 'aplication', blogImage: 'blog-5.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-02-14', topic: 'Database', slug: 'aplication',
     blogDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aspernatur laboriosam quos optio tempora distinctio quibusdam odit ut, magnam voluptatum esse magni ipsam dolorum iusto id temporibus dolores saepe repellat!',
     author: {
       authorName: 'sajad', authorImage: 'sdy2000.jpg'
     }
   },
   {
-    id: 6, blogName: 'MongoDB', blogImage: 'blog-6.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-012-17', topic: 'Database', slug: '#',
+    id: 6, blogName: 'disign', blogImage: 'blog-6.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-012-17', topic: 'Database', slug: 'disign',
     blogDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aspernatur laboriosam quos optio tempora distinctio quibusdam odit ut, magnam voluptatum esse magni ipsam dolorum iusto id temporibus dolores saepe repellat!',
     author: {
       authorName: 'sajad', authorImage: 'sdy2000.jpg'
     }
   },
   {
-    id: 7, blogName: 'MongoDB', blogImage: 'blog-7.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-04-11', topic: 'Database', slug: '#',
+    id: 7, blogName: 'rest-api', blogImage: 'blog-7.png', blogShortDescription: 'Building microservices with Dropwizard, MongoDB & Docker', createDate: '2023-04-11', topic: 'Database', slug: 'rest-api',
     blogDescription: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aspernatur laboriosam quos optio tempora distinctio quibusdam odit ut, magnam voluptatum esse magni ipsam dolorum iusto id temporibus dolores saepe repellat!',
     author: {
       authorName: 'sajad', authorImage: 'sdy2000.jpg'
