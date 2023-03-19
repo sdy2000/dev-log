@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet, useParams } from 'react-router-dom'
-import { BottomNavBar, Categores, Footer, Header, TopBar, Topics } from '../'
+import { BottomNavBar, Categores, Footer, Header, ShortURL, TopBar, Topics } from '../'
 import { SocialBox } from '../../components'
 
 const HomeLayout = () => {
@@ -30,6 +30,10 @@ const HomeLayout = () => {
                                 <Topics />
 
                                 <Categores />
+
+                                {slug && (
+                                    <ShortURL />
+                                )}
 
                             </div>
                         </div>

@@ -13,7 +13,7 @@ const ShortURL = () => {
         />
         <span className='md:w-[30%] '>
           <Button1
-            value={'Copy URL'}
+            value={'Copy'}
           />
         </span>
       </div>
