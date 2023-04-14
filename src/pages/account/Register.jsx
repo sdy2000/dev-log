@@ -76,7 +76,7 @@ const Register = () => {
                             If you have an account,
                         </p>
                         <b className='text-accent hover:underline ml-2'>
-                            <Link to='/register'>
+                            <Link to='/login'>
                                 Log in
                             </Link>
                         </b>
