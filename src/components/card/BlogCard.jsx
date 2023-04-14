@@ -8,7 +8,7 @@ const BlogCard = ({ blog }) => {
             <div className='bg-lbp dark:bg-dbp mb-4 p-2 rounded-lg shadow-lg transition-all duration-300 md:hover:-translate-y-1
             xs:grid grid-cols-5 xs:p-1 sm:max-w-2xl m-auto'>
                 <div className="col-span-2">
-                    <Link to={blog.slug}>
+                    <Link to={`/blog/${blog.slug}`}>
                         <img
                             className='blog-banner-img xs:rounded-md w-full h-full object-cover'
                             src={`/assets/img/${blog.blogImage}`}
@@ -18,7 +18,7 @@ const BlogCard = ({ blog }) => {
                 <div className='py-2 px-1 col-span-3 xs:px-5 xs:py-0'>
                     <CardButton text={blog.topic} href={blog.slug} />
                     <h3 className='leading-6 my-4'>
-                        <Link to={blog.slug} className='text-sm font-extrabold text-lfp dark:text-dfp hover:decoration-2
+                        <Link to={`/blog/${blog.slug}`} className='text-sm font-extrabold text-lfp dark:text-dfp hover:decoration-2
                          hover:underline transition-all duration-300'>
                             {blog.blogShortDescription}
                         </Link>

@@ -80,4 +80,14 @@
         @apply text-lfp dark:text-dfp bg-lbp dark:bg-dbp px-3 py-1 border-2 border-lfs
         dark:border-dft rounded-lg outline-none placeholder:text-lft w-full
     }
+
+
+    /*============================= Account =============================*/
+    .form-group{
+        @apply  flex items-center w-[80%] rounded-2xl bg-lbs dark:bg-dbs overflow-hidden
+    }
+    .form-group input{
+        @apply  outline-none rounded-2xl shadow-lg bg-lbs dark:bg-dbs w-full h-10 px-4 text-lfp dark:text-dfp
+    }
+    
 }
