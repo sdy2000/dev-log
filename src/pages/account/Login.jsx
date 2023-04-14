@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
+import { Button1 } from '../../components'
 
 const Login = () => {
     const [isShowPass, setIsShowPass] = useState(false)
 
     return (
-        <div className='mx-auto my-20 px-4 w-full max-w-lg'>
+        <div className='mx-auto my-56 md:my-80 px-4 w-full max-w-lg'>
             <div className='bg-lbp dark:bg-dbp w-full py-10 rounded-2xl shadow-lg flex flex-col justify-center items-center gap-8'>
                 <h1 className='text-lfp dark:text-dfp text-2xl font-bold'>
                     Login
@@ -34,6 +35,8 @@ const Login = () => {
                             }
                         </span>
                     </div>
+
+                    <Button1 value={'Login'} color='bg-accent text-white hover:bg-lft hover:text-lfp hover:border-lft border-accent px-8 mt-6' />
                 </form>
             </div>
         </div>
