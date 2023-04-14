@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AccountLayout, HomeLayout, Layout } from "./parts";
-import { HomeIndex, Login, PostDitails } from "./pages";
+import { HomeIndex, Login, PostDitails, Register } from "./pages";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
             </Route>
             <Route element={<AccountLayout />}>
             <Route path="/login" element={<Login />} />
+            <Route path="/Register" element={<Register />} />
             </Route>
           </Route>
           {/* <Route path="UserPanel" element={<UserLayout />} /> */}

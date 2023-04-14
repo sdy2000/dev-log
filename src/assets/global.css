@@ -89,5 +89,7 @@
     .form-group input{
         @apply  outline-none rounded-2xl shadow-lg bg-lbs dark:bg-dbs w-full h-10 px-4 text-lfp dark:text-dfp
     }
-    
+    .form-group-p{
+        @apply text-red-700 self-start px-16 mt-2 mb-6
+    }
 }

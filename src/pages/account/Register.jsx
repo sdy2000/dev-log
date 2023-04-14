@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
-import { Button1 } from '../../components'
 import { Link } from 'react-router-dom'
+import { Button1 } from '../../components'
 
-const Login = () => {
+const Register = () => {
     const [isShowPass, setIsShowPass] = useState(false)
+    const [isShowRePass, setIsShowRePass] = useState(false)
 
     return (
         <div className='mx-auto my-56 md:my-80 px-4 w-full max-w-lg'>
@@ -23,7 +24,14 @@ const Login = () => {
 
                     <div className='form-group'>
                         <input
-                            className='rounded-l-xl'
+                            type='email'
+                            placeholder='User Name'
+                            required />
+                    </div>
+                    <p className='form-group-p'>This filed is requaird !</p>
+
+                    <div className='form-group'>
+                        <input
                             type={!isShowPass ? 'password' : 'text'}
                             placeholder='Password'
                             required />
@@ -43,23 +51,33 @@ const Login = () => {
                     </div>
                     <p className='form-group-p'>This filed is requaird !</p>
 
-                    <div className='flex'>
-                        <p className='text-lfs dark:text-dfs text-sm font-semibold'>
-                            If forgot your password click here
-                        </p>
-                        <b className='text-accent hover:underline ml-2'>
-                            <Link to='#'>
-                                Forgot Password
-                            </Link>
-                        </b>
+                    <div className='form-group'>
+                        <input
+                            type={!isShowPass ? 'password' : 'text'}
+                            placeholder='RePassword'
+                            required />
+                        <span className='bg-lbs dark:bg-dbs text-lfp dark:text-dfp pr-4 hover:scale-110 cursor-pointer duration-300'>
+                            {
+                                !isShowRePass
+                                    ?
+                                    <BsEye
+                                        onClick={() => { setIsShowRePass(true) }}
+                                        size={30} />
+                                    :
+                                    <BsEyeSlash
+                                        onClick={() => { setIsShowRePass(false) }}
+                                        size={30} />
+                            }
+                        </span>
                     </div>
+                    <p className='form-group-p'>This filed is requaird !</p>
                     <div className='flex'>
                         <p className='text-lfs dark:text-dfs text-sm font-semibold'>
-                            If you do not have an account,
+                            If you have an account,
                         </p>
                         <b className='text-accent hover:underline ml-2'>
                             <Link to='/register'>
-                                Create One Here
+                                Log in
                             </Link>
                         </b>
                     </div>
@@ -71,4 +89,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register
