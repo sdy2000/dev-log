@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
 import { Button1 } from '../../components'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
     const [isShowPass, setIsShowPass] = useState(false)
@@ -34,6 +35,16 @@ const Login = () => {
                                         size={30} />
                             }
                         </span>
+                    </div>
+                    <div className='flex justify-between'>
+                        <p className='text-lfs dark:text-dfs text-sm font-semibold'>
+                            If forgot your password click here 
+                        </p>
+                        <b className='text-accent hover:underline ml-2'>
+                            <Link to='#'>
+                                Forgot Password
+                            </Link>
+                        </b>
                     </div>
 
                     <Button1 value={'Login'} color='bg-accent text-white hover:bg-lft hover:text-lfp hover:border-lft border-accent px-8 mt-6' />
