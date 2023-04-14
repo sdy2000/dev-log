@@ -19,7 +19,7 @@ const Login = () => {
                     </div>
                     <div className='form-group'>
                         <input
-                            type={!isShowPass?'password':'text'}
+                            type={!isShowPass ? 'password' : 'text'}
                             placeholder='Password' />
                         <span className='bg-lbs dark:bg-dbs text-lfp dark:text-dfp pr-4 hover:scale-110 cursor-pointer duration-300'>
                             {
