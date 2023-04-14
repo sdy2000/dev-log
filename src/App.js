@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomeLayout, Layout } from "./parts";
+import { AccountLayout, HomeLayout, Layout } from "./parts";
 import { HomeIndex, PostDitails } from "./pages";
 
 function App() {
@@ -11,6 +11,9 @@ function App() {
             <Route element={<HomeLayout />}>
               <Route path="/" element={<HomeIndex />} />
               <Route path="/:slug" element={<PostDitails />} />
+            </Route>
+            <Route element={<AccountLayout />}>
+              
             </Route>
           </Route>
           {/* <Route path="UserPanel" element={<UserLayout />} /> */}
