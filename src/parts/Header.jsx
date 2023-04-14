@@ -104,9 +104,9 @@ const Header = () => {
                         </span>
 
                         <ul className='accounting flex justify-start items-center gap-2'>
-                            <li><Link to="#">Login</Link></li>
+                            <li><Link to="/Login">Login</Link></li>
                             <li>\</li>
-                            <li><Link to="#">singout</Link></li>
+                            <li><Link to="/Register">singout</Link></li>
                         </ul>
                     </div>
 
@@ -124,9 +124,9 @@ const Header = () => {
                                     alt="User Avatar"
                                     width='120' height='120' />
                                 <ul className='flex justify-start items-center gap-2'>
-                                    <li><Link to="#">Login</Link></li>
+                                    <li><Link to="/Login">Login</Link></li>
                                     <li>\</li>
-                                    <li><Link to="#">singout</Link></li>
+                                    <li><Link to="/Register">singout</Link></li>
                                 </ul>
                             </div>
                         </div>

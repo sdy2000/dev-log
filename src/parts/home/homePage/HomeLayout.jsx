@@ -1,13 +1,12 @@
 import React from 'react'
 import { Outlet, useParams } from 'react-router-dom'
-import { BottomNavBar, Categores, Footer, Header, ShortURL, TopBar, Topics } from '../'
-import { SocialBox } from '../../components'
+import { BottomNavBar, Categores, ShortURL, TopBar, Topics } from '../..'
+import { SocialBox } from '../../../components'
 
 const HomeLayout = () => {
     const { slug } = useParams();
     return (
         <>
-            <Header />
             {!slug && (
                 <TopBar />
             )}
@@ -40,7 +39,6 @@ const HomeLayout = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }
