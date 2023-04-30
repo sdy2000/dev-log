@@ -1,46 +1,46 @@
 body {
-    font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /*=============== scrollbar style ===============*/
 
 ::-webkit-scrollbar {
-    width: 16px;
+  width: 16px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(#4364f9);
-    border-radius: 20px;
-    border: 3px solid;
+  background: var(#4364f9);
+  border-radius: 20px;
+  border: 3px solid;
 }
 
 .light-theme::-webkit-scrollbar-thumb {
-    border-color: hsl(0, 0%, 90%);
+  border-color: hsl(0, 0%, 90%);
 }
 
 .dark-theme::-webkit-scrollbar-thumb {
-    border-color: hsl(219, 27%, 20%);
+  border-color: hsl(219, 27%, 20%);
 }
 
 .light-theme::-webkit-scrollbar-track {
-    background: hsl(0, 0%, 90%);
+  background: hsl(0, 0%, 90%);
 }
 
 .dark-theme::-webkit-scrollbar-track {
-    background: hsl(219, 27%, 20%);
+  background: hsl(219, 27%, 20%);
 }
-
 
 /*=============== Base ===============*/
 
 .mobile-nav {
-    transition: 0.7s cubic-bezier(1, 0, 0.3, 0.7);
+  transition: 0.7s cubic-bezier(1, 0, 0.3, 0.7);
 }
 
-.pattern-bg{
-    background-image: url('/public/assets/img/pattern.png');
-    position: absolute;
-    top: -160px;right: 20px;
-    width: 360px;
-    height: 365px;
+.pattern-bg {
+  background-image: url("./public/assets/img/pattern.png");
+  position: absolute;
+  top: -160px;
+  right: 20px;
+  width: 360px;
+  height: 365px;
 }

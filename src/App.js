@@ -1,6 +1,13 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { AccountLayout, HomeLayout, Layout } from "./parts";
-import { HomeIndex, Login, PostDitails, Register } from "./pages";
+import {
+  AboutUs,
+  ContactUs,
+  HomeIndex,
+  Login,
+  PostDitails,
+  Register,
+} from "./pages";
 
 function App() {
   return (
@@ -16,6 +23,8 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/Register" element={<Register />} />
             </Route>
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Route>
           {/* <Route path="UserPanel" element={<UserLayout />} /> */}
           {/* <Route path="/AdminPanel" element={<AdminLaout />} /> */}

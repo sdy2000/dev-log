@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { IconButton, SocialBox, ThemeButton } from "../components";
+import { IconButton, SocialBox, ThemeButton } from "../../components";
 import { BsChevronDown, BsList } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
-import "../assets/global.css";
-import useScrollDirection from "../utils/windowEvent/useScrollDirection";
+import "../../assets/global.css";
+import useScrollDirection from "../../utils/windowEvent/useScrollDirection";
 
 const categores = [
   {
@@ -78,16 +78,16 @@ const Header = () => {
             </Link>
             <ul className="desktop-nav  hidden lg:flex justify-center items-center gap-6 ml-12">
               <li>
-                <Link to="#">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="#">Blogs</Link>
+                <Link to="/blogs">Blogs</Link>
               </li>
               <li>
-                <Link to="#">About Us</Link>
+                <Link to="/about-us">About Us</Link>
               </li>
               <li>
-                <Link to="#">Contact Us</Link>
+                <Link to="/contact-us">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -155,19 +155,24 @@ const Header = () => {
               <h3 className="title">Main Menu</h3>
               <ul>
                 <li>
-                  <Link to="#">Home</Link>
+                  <Link to="/" onClick={() => setIsOpenList(false)}>
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link to="#">Blogs</Link>
+                  <Link to="/blogs" onClick={() => setIsOpenList(false)}>
+                    Blogs
+                  </Link>
                 </li>
                 <li>
-                  <Link to="#">Cooperation with DEVLog</Link>
+                  <Link to="/about-us" onClick={() => setIsOpenList(false)}>
+                    About Us
+                  </Link>
                 </li>
                 <li>
-                  <Link to="#">About Us</Link>
-                </li>
-                <li>
-                  <Link to="#">Contact</Link>
+                  <Link to="/contact-us" onClick={() => setIsOpenList(false)}>
+                    Contact Us
+                  </Link>
                 </li>
               </ul>
             </div>
