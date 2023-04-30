@@ -32,8 +32,8 @@ const TopBar = () => {
             <div className="circle-shap bg-accent -top-32 right-16 xl:-top-[123px] xl:right-[55px]"></div>
 
             <img
-              className=" rounded-full max-w-[283px] absolute -top-[173px] right-[67px]
-                             xl:max-w-[320px] xl:-top-[190px] xl:right-[51px]"
+              className=" rounded-full max-w-[325px] absolute -top-[168px] right-[45px]
+                             xl:max-w-[352px] xl:-top-[165px] xl:right-[34px]"
               src="./assets/img/about.png"
               alt="User Avatar Img"
             />
