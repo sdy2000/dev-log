@@ -15,10 +15,10 @@ const TopBar = () => {
             Specialized in Full Stack Development
           </p>
           <div className="btn-group flex justify-center gap-3">
-            <Button1 value={"Contact Us"} href={"#"} />
+            <Button1 value={"Contact Us"} href={"/contact-us"} />
             <Button1
               value={"About Us"}
-              href={"#"}
+              href={"/about-us"}
               color={
                 "bg-lbs text-lfs dark:bg-dbp hover:border-accent hover:text-accent dark:hover:border-accent dark:hover:text-accent dark:text-dfs  border-lft"
               }

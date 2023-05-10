@@ -11,10 +11,13 @@ const CommetnDitail = ({ comments }) => {
 
         <div className="flex flex-col justify-between items-center gap-2 mt-8">
           {comments.map((comment) => (
-            <div className="flex justify-start items-start gap-2 md:gap-4 mb-6 pb-4 border-b-2 border-lft w-full">
+            <div
+              className="flex justify-start items-start gap-2 md:gap-4 mb-6 pb-4 border-b-2 border-lft w-full"
+              key={comment.id}
+            >
               <img
                 className="w-10 h-10 md:w-12 md:h-12 object-cover border-2 border-lft rounded-full"
-                src={`./assets/img/sdy2000.jpg`}
+                src={`./assets/img/${comment.userAvatar}`}
                 alt="Author Name"
               />
               <span>

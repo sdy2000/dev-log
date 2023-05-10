@@ -67,11 +67,16 @@ const Footer = () => {
           styles={"socail-icons flex items-center justify-center gap-5"}
         />
       </div>
-      <p className="text-lfp dark:text-dfp text-center pb-4 md:mt-4">
-        &copy; Copyright 2023{" "}
-        <a href="/#">
-          <span className="text-accent">DEV</span>Log
-        </a>
+      <p className="text-lfp dark:text-dfp text-center pb-4 md:mt-4 flex flex-col gap-2">
+        <span>
+          &copy; Copyright 2023{" "}
+          <a href="/#">
+            <span className="text-accent">DEV</span>Log
+          </a>
+        </span>
+        <span className="text-lfp dark:text-dfp font-bold">
+          Create By <span className="text-red-300">sajad.D</span>
+        </span>
       </p>
     </footer>
   );
