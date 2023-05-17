@@ -1,4 +1,4 @@
-# FNews Tracker with React JS, TailwindCss
+# DEVLog Tracker with React JS, TailwindCss
 
 ## Demo
 
