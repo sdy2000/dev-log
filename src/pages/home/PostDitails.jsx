@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { CommetnDitail, PostComment } from "../../parts";
+import { CommetnDitail, PostComment } from "../../features";
 import { useEffect } from "react";
 import { useState } from "react";
 import { dataForCard } from "../../service/data/dataForCard";

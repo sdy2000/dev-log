@@ -1,5 +1,4 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { AccountLayout, HomeLayout, Layout } from "./parts";
 import {
   AboutUs,
   ContactUs,
@@ -8,6 +7,7 @@ import {
   PostDitails,
   Register,
 } from "./pages";
+import { HomeLayout, AccountLayout, Layout, BlogLayout } from "./layouts";
 
 function App() {
   return (
@@ -15,16 +15,23 @@ function App() {
       <HashRouter>
         <Routes>
           <Route element={<Layout />}>
+            {/* Home */}
             <Route element={<HomeLayout />}>
-              <Route path="/" element={<HomeIndex />} />
-              <Route path="/blog/:slug" element={<PostDitails />} />
+              <Route path="*" element={<HomeIndex />} />
             </Route>
+            {/* Blog */}
+            <Route element={<BlogLayout />}>
+              <Route path="blog/:slug" element={<PostDitails />} />
+              <Route path="/blogs" element={<HomeIndex />} />
+            </Route>
+            {/* Account */}
             <Route element={<AccountLayout />}>
-              <Route path="/login" element={<Login />} />
-              <Route path="/Register" element={<Register />} />
+              <Route path="login" element={<Login />} />
+              <Route path="Register" element={<Register />} />
             </Route>
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/contact-us" element={<ContactUs />} />
+            {/* Oder */}
+            <Route path="about-us" element={<AboutUs />} />
+            <Route path="contact-us" element={<ContactUs />} />
           </Route>
           {/* <Route path="UserPanel" element={<UserLayout />} /> */}
           {/* <Route path="/AdminPanel" element={<AdminLaout />} /> */}

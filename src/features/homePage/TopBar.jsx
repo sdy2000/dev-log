@@ -1,5 +1,5 @@
 import React from "react";
-import { Button1 } from "../../../components";
+import { Button1 } from "../../components";
 
 const TopBar = () => {
   return (

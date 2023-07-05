@@ -1,5 +1,5 @@
 import React from "react";
-import { CardTime } from "../../../components";
+import { CardTime } from "../../components";
 
 const CommetnDitail = ({ comments }) => {
   return (
