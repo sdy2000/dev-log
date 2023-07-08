@@ -1,23 +1,27 @@
 import React from "react";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import { IconButton } from "..";
-import { useStateTheme } from "../../hooks/useStateContext";
+import { useDispatch, useSelector } from "react-redux";
+import { chengTheme } from "../../context/features/theme/theme-slice";
 
 const ThemeButton = () => {
-  const { theme, setTheme } = useStateTheme();
+  const { theme } = useSelector((store) => store.theme);
+  const despatch = useDispatch();
 
-  const chengeTheme = () => {
-    setTheme({
-      theme: theme.theme === "dark" ? "light" : "dark",
-    });
-  };
-
-  return theme.theme === "light" ? (
-    <span onClick={chengeTheme}>
+  return theme === "light" ? (
+    <span
+      onClick={() => {
+        despatch(chengTheme());
+      }}
+    >
       <IconButton value={<BsSunFill />} />
     </span>
   ) : (
-    <span onClick={chengeTheme}>
+    <span
+      onClick={() => {
+        despatch(chengTheme());
+      }}
+    >
       <IconButton value={<BsMoonFill />} />
     </span>
   );

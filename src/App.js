@@ -8,8 +8,24 @@ import {
   Register,
 } from "./pages";
 import { HomeLayout, AccountLayout, Layout, BlogLayout } from "./layouts";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
+  const { theme } = useSelector((store) => store.theme);
+
+  const checkTheme = (existing) => {
+    const root = window.document.documentElement;
+    const isDark = existing === "dark";
+
+    root.classList.remove(isDark ? "light" : "dark");
+    root.classList.add(existing);
+  };
+
+  useEffect(() => {
+    checkTheme(theme);
+  }, [theme]);
+
   return (
     <>
       <HashRouter>
