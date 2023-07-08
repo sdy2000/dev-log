@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   AboutUs,
   ContactUs,
@@ -7,9 +7,16 @@ import {
   PostDitails,
   Register,
 } from "./pages";
-import { HomeLayout, AccountLayout, Layout, BlogLayout } from "./layouts";
+import {
+  HomeLayout,
+  AccountLayout,
+  Layout,
+  BlogLayout,
+  UserPanelLayout,
+} from "./layouts";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Authenticate } from "./features";
 
 function App() {
   const { theme } = useSelector((store) => store.theme);
@@ -28,7 +35,7 @@ function App() {
 
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
             {/* Home */}
@@ -48,11 +55,14 @@ function App() {
             {/* Oder */}
             <Route path="about-us" element={<AboutUs />} />
             <Route path="contact-us" element={<ContactUs />} />
+            {/* User Panel */}
+            <Route element={<Authenticate />}>
+              <Route path="user-panel" element={<UserPanelLayout />} />
+            </Route>
           </Route>
-          {/* <Route path="UserPanel" element={<UserLayout />} /> */}
           {/* <Route path="/AdminPanel" element={<AdminLaout />} /> */}
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
