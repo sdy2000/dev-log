@@ -16,4 +16,4 @@ export { default as PostComment } from "./postDetails/PostComment";
 export { default as CommetnDitail } from "./postDetails/CommetnDitail";
 
 // / // / // / // User Panel // / // / // / //
-export { default as Authenticate } from "./userPanel/Authenticate";
+export { default as Authenticate } from "./userPanel/layout/Authenticate";

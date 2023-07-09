@@ -2,10 +2,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   AboutUs,
   ContactUs,
+  EditProfile,
   HomeIndex,
   Login,
   PostDitails,
+  Profile,
   Register,
+  Setting,
+  Singout,
 } from "./pages";
 import {
   HomeLayout,
@@ -16,7 +20,7 @@ import {
 } from "./layouts";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Authenticate } from "./features";
+// import { Authenticate } from "./features";
 
 function App() {
   const { theme } = useSelector((store) => store.theme);
@@ -56,9 +60,14 @@ function App() {
             <Route path="about-us" element={<AboutUs />} />
             <Route path="contact-us" element={<ContactUs />} />
             {/* User Panel */}
-            <Route element={<Authenticate />}>
-              <Route path="user-panel" element={<UserPanelLayout />} />
+            {/* <Route element={<Authenticate />}> */}
+            <Route element={<UserPanelLayout />}>
+              <Route path="user-panel/" element={<Profile />} />
+              <Route path="user-panel/edit" element={<EditProfile />} />
+              <Route path="user-panel/setting" element={<Setting />} />
+              <Route path="user-panel/sing-out" element={<Singout />} />
             </Route>
+            {/* </Route> */}
           </Route>
           {/* <Route path="/AdminPanel" element={<AdminLaout />} /> */}
         </Routes>
