@@ -10,7 +10,7 @@ const panelBar = [
 
 const UserPanelNavbar = () => {
   return (
-    <div className="col-span-2 relative w-full py-8 bg-lbp dark:bg-dbp rounded-xl shadow-lg overflow-hidden">
+    <div className="col-span-2 relative w-full py-8 bg-lbp dark:bg-dbp rounded-xl shadow-lg overflow-hidden h-fit">
       <img
         className="absolute top-0 left-0 w-full h-36 object-cover"
         src="./assets/img/blog-7.png"
