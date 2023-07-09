@@ -89,6 +89,9 @@ const Header = () => {
               <li>
                 <Link to="/contact-us">Contact Us</Link>
               </li>
+              <li>
+                <Link to="/user-panel">(User Panel)</Link>
+              </li>
             </ul>
           </div>
 
