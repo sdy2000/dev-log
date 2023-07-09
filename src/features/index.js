@@ -17,3 +17,5 @@ export { default as CommetnDitail } from "./postDetails/CommetnDitail";
 
 // / // / // / // User Panel // / // / // / //
 export { default as Authenticate } from "./userPanel/layout/Authenticate";
+export { default as MapBar } from "./userPanel/layout/MapBar";
+export { default as UserPanelNavbar } from "./userPanel/layout/UserPanelNavbar";
