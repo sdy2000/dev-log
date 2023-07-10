@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { closeModal } from "../../../context/features/modal/modal-slice";
 
 export default function useWidthListener() {
-  const [isOpenList, setIsOpenList] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 1024) {
-        setIsOpenList(false);
+        dispatch(closeModal("hidden_header_bar"));
       }
     });
-  }, []);
-
-  return {
-    isOpenList,
-    setIsOpenList,
-  };
+  }, [dispatch]);
 }

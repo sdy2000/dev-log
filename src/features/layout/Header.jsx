@@ -7,14 +7,16 @@ import useScrollDirection from "../../utils/windowEvent/useScrollDirection";
 import { topBar } from "./data/header-data";
 import useWidthListener from "./hooks/useWidthListener";
 import HiddenHeaderBar from "./HiddenHeaderBar";
+import { useDispatch, useSelector } from "react-redux";
+import { openModal } from "../../context/features/modal/modal-slice";
 
 const Header = () => {
-  const { isOpenList, setIsOpenList } = useWidthListener();
+  const { isOpen, modalId } = useSelector((store) => store.modal);
+  const dispatch = useDispatch();
   const scrollDirection = useScrollDirection();
+  useWidthListener();
 
-  function OpenList() {
-    isOpenList === true ? setIsOpenList(false) : setIsOpenList(true);
-  }
+  console.log(isOpen, modalId);
   return (
     <header
       className={`sticky ${scrollDirection === "down" ? "-top-24" : "top-0"}
@@ -43,7 +45,7 @@ const Header = () => {
 
           <div className="btn-group flex items-center gap-3 lg:hidden">
             <ThemeButton />
-            <span onClick={OpenList}>
+            <span onClick={() => dispatch(openModal("hidden_header_bar"))}>
               <IconButton value={<BsList />} />
             </span>
           </div>
@@ -64,11 +66,7 @@ const Header = () => {
             </ul>
           </div>
 
-          <HiddenHeaderBar
-            isOpenList={isOpenList}
-            setIsOpenList={setIsOpenList}
-            OpenList={OpenList}
-          />
+          <HiddenHeaderBar />
         </nav>
       </div>
     </header>

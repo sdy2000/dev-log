@@ -4,9 +4,13 @@ import { IconButton, SocialBox } from "../../components";
 import { IoMdClose } from "react-icons/io";
 import { categories, topBar } from "./data/header-data";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { closeModal } from "../../context/features/modal/modal-slice";
 
-const HiddenHeaderBar = ({ isOpenList, setIsOpenList, OpenList }) => {
+const HiddenHeaderBar = () => {
   const [clickStates, setClickStates] = useState({});
+  const { isOpen, modalId } = useSelector((store) => store.modal);
+  const dispatch = useDispatch();
 
   const handleOnClick = (id) => {
     if (clickStates[id] === true) {
@@ -25,13 +29,13 @@ const HiddenHeaderBar = ({ isOpenList, setIsOpenList, OpenList }) => {
       className={`mobile-nav fixed inset-0 bg-lbp dark:bg-dbp py-16 px-5 overflow-auto
                      overscroll-contain z-10 border-l-2 border-l-las dark:border-l-lft lg:hidden
                      ${
-                       !isOpenList
+                       !isOpen && modalId !== "hidden_header_bar"
                          ? "translate-x-[100%] invisible"
                          : "translate-x-[20%] visible"
                      }`}
     >
       <span
-        onClick={OpenList}
+        onClick={() => dispatch(closeModal(""))}
         className="nav-close-btn absolute top-5 right-[25%]"
       >
         <IconButton value={<IoMdClose />} />
@@ -65,7 +69,7 @@ const HiddenHeaderBar = ({ isOpenList, setIsOpenList, OpenList }) => {
               <Link
                 title={bar.title}
                 to={bar.slug}
-                onClick={() => setIsOpenList(false)}
+                onClick={() => dispatch(closeModal(""))}
               >
                 {bar.title}
               </Link>
