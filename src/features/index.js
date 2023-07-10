@@ -1,6 +1,6 @@
-// / // / // / // Parts // / // / // / //
-export { default as Header } from "./shared/Header";
-export { default as Footer } from "./shared/Footer";
+// / // / // / // Layout // / // / // / //
+export { default as Header } from "./layout/Header";
+export { default as Footer } from "./layout/Footer";
 
 // / // / // / // Home Parts // / // / // / //
 export { default as Categores } from "./home/Categores";
