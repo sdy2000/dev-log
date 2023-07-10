@@ -30,5 +30,4 @@ export const topBar = [
   { title: "Blogs", slug: "/blogs" },
   { title: "About Us", slug: "/about-us" },
   { title: "Contact Us", slug: "/contact-us" },
-  { title: "(User Panel)", slug: "/user-panel" },
 ];

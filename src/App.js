@@ -55,6 +55,7 @@ function App() {
             <Route element={<AccountLayout />}>
               <Route path="login" element={<Login />} />
               <Route path="Register" element={<Register />} />
+              <Route path="sing-out" element={<Singout />} />
             </Route>
             {/* Oder */}
             <Route path="about-us" element={<AboutUs />} />
@@ -65,7 +66,6 @@ function App() {
               <Route path="user-panel/" element={<Profile />} />
               <Route path="user-panel/edit" element={<EditProfile />} />
               <Route path="user-panel/setting" element={<Setting />} />
-              <Route path="user-panel/sing-out" element={<Singout />} />
             </Route>
             {/* </Route> */}
           </Route>

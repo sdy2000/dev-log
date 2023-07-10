@@ -11,12 +11,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../context/features/modal/modal-slice";
 
 const Header = () => {
-  const { isOpen, modalId } = useSelector((store) => store.modal);
+  const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const scrollDirection = useScrollDirection();
   useWidthListener();
 
-  console.log(isOpen, modalId);
   return (
     <header
       className={`sticky ${scrollDirection === "down" ? "-top-24" : "top-0"}
@@ -50,19 +49,33 @@ const Header = () => {
             </span>
           </div>
 
-          <div className="flex-wrapper hidden lg:flex justify-center items-center gap-12">
+          <div className="flex-wrapper hidden lg:flex justify-center items-center gap-4">
             <span className="hidden lg:inline-block">
               <ThemeButton />
             </span>
 
             <ul className="accounting flex justify-start items-center gap-2">
-              <li>
-                <Link to="/Login">Login</Link>
-              </li>
-              <li>\</li>
-              <li>
-                <Link to="/Register">singout</Link>
-              </li>
+              {user.user_id === 0 ? (
+                <>
+                  <li>
+                    <Link to="/Login">Log in</Link>
+                  </li>
+                  <li>\</li>
+                  <li>
+                    <Link to="/Register">Sign up</Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link to="/user-panel">{user.user_name}</Link>
+                  </li>
+                  <li>\</li>
+                  <li>
+                    <Link to="/sing-out">Sing out</Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 

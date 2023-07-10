@@ -1,6 +1,6 @@
 import React from "react";
 import { AccountingInput } from "../../components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { ENDPOINTS, createAPIEndpoint } from "../../service/api";
 import { useDispatch } from "react-redux";
@@ -14,6 +14,7 @@ const getLoginModel = () => ({
 const Login = () => {
   const { values, handleInputChange } = useForm(getLoginModel);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ const Login = () => {
       .post(login)
       .then((res) => {
         dispatch(loginUser(res.data));
-        // console.log(res.data);
+        navigate("/user-panel");
       })
       .catch((err) => console.log(err));
   };

@@ -10,6 +10,7 @@ import { closeModal } from "../../context/features/modal/modal-slice";
 const HiddenHeaderBar = () => {
   const [clickStates, setClickStates] = useState({});
   const { isOpen, modalId } = useSelector((store) => store.modal);
+  const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
   const handleOnClick = (id) => {
@@ -50,13 +51,27 @@ const HiddenHeaderBar = () => {
             height="120"
           />
           <ul className="flex justify-start items-center gap-2">
-            <li>
-              <Link to="/Login">Login</Link>
-            </li>
-            <li>\</li>
-            <li>
-              <Link to="/Register">singout</Link>
-            </li>
+            {user.user_id === 0 ? (
+              <>
+                <li>
+                  <Link to="/Login">Log in</Link>
+                </li>
+                <li>\</li>
+                <li>
+                  <Link to="/Register">Sign up</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/user-panel">{user.user_name}</Link>
+                </li>
+                <li>\</li>
+                <li>
+                  <Link to="/sing-out">Sing out</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>
