@@ -3,6 +3,8 @@ import { AccountingInput } from "../../components";
 import { Link } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { ENDPOINTS, createAPIEndpoint } from "../../service/api";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../context/features/user/user-slice";
 
 const getLoginModel = () => ({
   email: "",
@@ -11,6 +13,7 @@ const getLoginModel = () => ({
 });
 const Login = () => {
   const { values, handleInputChange } = useForm(getLoginModel);
+  const dispatch = useDispatch();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +28,8 @@ const Login = () => {
     createAPIEndpoint(ENDPOINTS.login)
       .post(login)
       .then((res) => {
-        console.log(res.data);
+        dispatch(loginUser(res.data));
+        // console.log(res.data);
       })
       .catch((err) => console.log(err));
   };

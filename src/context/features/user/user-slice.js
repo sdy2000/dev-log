@@ -7,7 +7,7 @@ const initialState = () => {
       JSON.stringify({
         user_id: 0,
         user_name: "",
-        is_active: false,
+        email: "",
       })
     );
   }
@@ -18,10 +18,18 @@ const initialState = () => {
 const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    loginUser: (state, { payload }) => {
+      state.user_id = payload.user_id;
+      state.user_name = payload.user_name;
+      state.email = payload.email;
+
+      localStorage.setItem("user", JSON.stringify(state));
+    },
+  },
   extraReducers: (builder) => {},
 });
 
-// export const {} = userSlice.actions;
+export const { loginUser } = userSlice.actions;
 
 export default userSlice.reducer;
