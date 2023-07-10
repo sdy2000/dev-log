@@ -2,94 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-    body{
-        @apply bg-lbs dark:bg-dbs
-    }
+@layer components {
+  body {
+    @apply bg-lbs dark:bg-dbs;
+  }
 
-    /*--------------- Header ----------------*/
-    .mobile-nav-wrapper{
-        @apply pb-5 mb-8 border-b border-b-dft
-    }
-    .mobile-nav-wrapper .title{
-        @apply text-xl font-extrabold text-lfp dark:text-dfp mb-4
-    }
-    .mobile-nav-wrapper ul li{
-        @apply mb-2
-    }
-    .mobile-nav-wrapper ul li a{
-        @apply text-base text-lfs dark:text-dfs transition-all duration-300 hover:text-accent dark:hover:text-accent
-    }
-    .desktop-nav li{
-        @apply xl:text-lg font-bold text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300
-    }
-    .accounting li{
-        @apply font-semibold text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300
-    }
-    .header-bar li a{
-        @apply flex justify-start items-center gap-2
-    }
-    .header-sub-bar{
-        @apply flex flex-col justify-center items-start mt-2 
-    }
-    .header-sub-bar li{
-        @apply inline-block hover:bg-lft w-full pl-4 rounded-xl px-2 py-1
-    }
+  /*--------------- Header ----------------*/
+  .mobile-nav-wrapper {
+    @apply pb-5 mb-8 border-b border-b-dft;
+  }
+  .mobile-nav-wrapper .title {
+    @apply text-xl font-extrabold text-lfp dark:text-dfp mb-4;
+  }
+  .mobile-nav-wrapper ul li {
+    @apply mb-2;
+  }
+  .mobile-nav-wrapper ul li a {
+    @apply text-base text-lfs dark:text-dfs transition-all duration-300 hover:text-accent dark:hover:text-accent;
+  }
+  .desktop-nav li {
+    @apply xl:text-lg font-bold text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300;
+  }
+  .accounting li {
+    @apply font-semibold text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300;
+  }
+  .header-bar li a {
+    @apply flex justify-start items-center gap-2;
+  }
+  .header-sub-bar {
+    @apply flex flex-col justify-center items-start mt-2;
+  }
+  .header-sub-bar li {
+    @apply inline-block hover:bg-lft w-full pl-4 rounded-xl px-2 py-1;
+  }
 
-    /*--------------- TopBar ----------------*/
-    .circle-shap{
-        @apply w-72 h-72 absolute rounded-full xl:w-[310px] xl:h-[310px]
-    }
-    .botton-bar li{
-        @apply relative
-    }
-    .botton-bar li a{
-        @apply  hover:text-accent dark:hover:text-accent transition-all duration-300 font-semibold flex justify-center items-center gap-1
-    }
-    .sub-bar {
-        @apply absolute top-6 left-8 py-1  bg-dfs dark:bg-lfs rounded-md w-40
-    }
-    .sub-bar li{
-        @apply inline-block hover:bg-lft w-full
-    }
+  /*--------------- TopBar ----------------*/
+  .circle-shap {
+    @apply w-72 h-72 absolute rounded-full xl:w-[310px] xl:h-[310px];
+  }
+  .botton-bar li {
+    @apply relative;
+  }
+  .botton-bar li a {
+    @apply hover:text-accent dark:hover:text-accent transition-all duration-300 font-semibold flex justify-center items-center gap-1;
+  }
+  .sub-bar {
+    @apply absolute top-6 left-8 py-1  bg-dfs dark:bg-lfs rounded-md w-40;
+  }
+  .sub-bar li {
+    @apply inline-block hover:bg-lft w-full;
+  }
 
-    /*--------------- Footer ----------------*/
-    .container .wrapper{
-        @apply text-center flex flex-col gap-3
-    }
+  /*--------------- Footer ----------------*/
+  .container .wrapper {
+    @apply text-center flex flex-col gap-3;
+  }
 
-    .footer-title{
-        @apply text-lg font-extrabold text-lfp dark:text-dfp
-    }
-    .wrapper .footer-link{
-        @apply text-sm text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300
-    }
-    .socail-icons li{
-        @apply text-xl p-2 rounded-full hover:bg-lft dark:hover:bg-dft transition-all duration-300
-    }
-    .socail-icon{
-        @apply text-xl
-    }
+  .footer-title {
+    @apply text-lg font-extrabold text-lfp dark:text-dfp;
+  }
+  .wrapper .footer-link {
+    @apply text-sm text-lfs dark:text-dfs hover:text-accent dark:hover:text-accent transition-all duration-300;
+  }
+  .socail-icons li {
+    @apply text-xl p-2 rounded-full hover:bg-lft dark:hover:bg-dft transition-all duration-300;
+  }
+  .socail-icon {
+    @apply text-xl;
+  }
 
+  /*--------------- Comment ----------------*/
+  .post-ditail-card {
+    @apply bg-lbp dark:bg-dbp rounded-xl shadow-lg px-2 py-4 mx-3 flex justify-start flex-col gap-4 md:gap-8 pb-8 mb-12;
+  }
+  .post-ditail-comment {
+    @apply text-lfp dark:text-dfp bg-lbp dark:bg-dbp px-3 py-1 border-2 border-lfs
+        dark:border-dft rounded-lg outline-none placeholder:text-lft w-full;
+  }
 
-    /*--------------- Comment ----------------*/
-    .post-ditail-card{
-        @apply bg-lbp dark:bg-dbp rounded-xl shadow-lg px-2 py-4 mx-3 flex justify-start flex-col gap-4 md:gap-8 pb-8 mb-12
-    }
-    .post-ditail-comment{
-        @apply text-lfp dark:text-dfp bg-lbp dark:bg-dbp px-3 py-1 border-2 border-lfs
-        dark:border-dft rounded-lg outline-none placeholder:text-lft w-full
-    }
+  /*============================= Account =============================*/
+  .form-group {
+    @apply flex items-center w-[80%] rounded-2xl bg-lbs dark:bg-dbs overflow-hidden;
+  }
+  .form-group input {
+    @apply outline-none rounded-2xl shadow-lg bg-lbs dark:bg-dbs w-full h-10 px-4 text-lfp dark:text-dfp;
+  }
+  .form-group-p {
+    @apply text-red-700 self-start px-16 mt-2 mb-6;
+  }
 
-
-    /*============================= Account =============================*/
-    .form-group{
-        @apply  flex items-center w-[80%] rounded-2xl bg-lbs dark:bg-dbs overflow-hidden
-    }
-    .form-group input{
-        @apply  outline-none rounded-2xl shadow-lg bg-lbs dark:bg-dbs w-full h-10 px-4 text-lfp dark:text-dfp
-    }
-    .form-group-p{
-        @apply text-red-700 self-start px-16 mt-2 mb-6
-    }
+  /*--------------- Input ----------------*/
+  .accounting-input-div {
+    @apply flex justify-between items-center bg-lbs dark:bg-dbs rounded-xl shadow-lg border border-dft dark:border-lft focus:outline-4 hover:border-blue-600 dark:hover:border-blue-800 overflow-hidden duration-300 w-full;
+  }
+  .accounting-input-div input {
+    @apply bg-lbs dark:bg-dbs h-14 py-1 px-4 w-full text-lfp dark:text-dfp placeholder-lft dark:placeholder-dft outline-none;
+  }
+  .accounting-input-div svg {
+    @apply text-lfp dark:text-dfp hover:scale-110 cursor-pointer duration-300 pr-3;
+  }
 }
