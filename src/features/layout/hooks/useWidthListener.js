@@ -8,7 +8,7 @@ export default function useWidthListener() {
   useEffect(() => {
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 1024) {
-        dispatch(closeModal("hidden_header_bar"));
+        dispatch(closeModal(""));
       }
     });
   }, [dispatch]);
