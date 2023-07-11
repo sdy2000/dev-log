@@ -5,7 +5,7 @@ const panelBar = [
   { title: "Profile", slug: "user-panel" },
   { title: "Edit", slug: "user-panel/edit" },
   { title: "setting", slug: "user-panel/setting" },
-  { title: "Sing Out", slug: "user-panel/sing-out" },
+  { title: "Sing Out", slug: "sing-out" },
 ];
 
 const UserPanelNavbar = () => {

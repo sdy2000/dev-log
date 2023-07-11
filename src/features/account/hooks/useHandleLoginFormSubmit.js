@@ -6,7 +6,6 @@ import { loginUser } from "../../../context/features/user/user-slice";
 export default function useHandleLoginFormSubmit() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
