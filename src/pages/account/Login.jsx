@@ -16,12 +16,13 @@ const getLoginModel = () => ({
 });
 const Login = () => {
   const { values, handleInputChange } = useForm(getLoginModel);
+  const handleSubmit = useHandleLoginFormSubmit();
 
   return (
     <AccountBox title={"Log In"}>
       <form
         className="flex flex-col items-center gap-8 w-full px-12"
-        onSubmit={useHandleLoginFormSubmit}
+        onSubmit={handleSubmit}
       >
         <AccountingInput
           type={"email"}

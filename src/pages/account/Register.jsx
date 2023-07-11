@@ -17,12 +17,13 @@ const getRegisterModel = () => ({
 
 const Register = () => {
   const { values, handleInputChange } = useForm(getRegisterModel);
+  const handleSubmit = useHandleRegisterFormSubmit();
 
   return (
     <AccountBox title={"Sign Up"}>
       <form
         className="flex flex-col items-center gap-6 w-full px-8"
-        onSubmit={useHandleRegisterFormSubmit}
+        onSubmit={handleSubmit}
       >
         <AccountingInput
           type={"text"}

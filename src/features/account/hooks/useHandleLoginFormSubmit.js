@@ -3,24 +3,29 @@ import { useNavigate } from "react-router-dom";
 import { ENDPOINTS, createAPIEndpoint } from "../../../service/api";
 import { loginUser } from "../../../context/features/user/user-slice";
 
-export default function useHandleLoginFormSubmit(e) {
+export default function useHandleLoginFormSubmit() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  e.preventDefault();
-  const formData = new FormData(e.currentTarget);
-  const login = Object.fromEntries(formData);
-  if (login.remember_me === undefined) {
-    login.remember_me = false;
-  } else {
-    login.remember_me = true;
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  createAPIEndpoint(ENDPOINTS.login)
-    .post(login)
-    .then((res) => {
-      dispatch(loginUser(res.data));
-      navigate("/user-panel");
-    })
-    .catch((err) => console.log(err));
+    const formData = new FormData(e.currentTarget);
+    const login = Object.fromEntries(formData);
+    if (login.remember_me === undefined) {
+      login.remember_me = false;
+    } else {
+      login.remember_me = true;
+    }
+
+    createAPIEndpoint(ENDPOINTS.login)
+      .post(login)
+      .then((res) => {
+        dispatch(loginUser(res.data));
+        navigate("/user-panel");
+      })
+      .catch((err) => console.log(err));
+  };
+
+  return handleSubmit;
 }

@@ -7,6 +7,7 @@ export { default as ContactUs } from "./home/ContactUs";
 // / // / // / // Account // / // / // / //
 export { default as Login } from "./account/Login";
 export { default as Register } from "./account/Register";
+export { default as SuccessRegister } from "./account/SuccessRegister";
 
 // / // / // / // User Panel // / // / // / //
 export { default as Profile } from "./userPanel/Profile";

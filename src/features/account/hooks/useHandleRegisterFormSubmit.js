@@ -4,14 +4,18 @@ import { ENDPOINTS, createAPIEndpoint } from "../../../service/api";
 export default function useHandleRegisterFormSubmit(e) {
   const navigate = useNavigate();
 
-  e.preventDefault();
-  const formData = new FormData(e.currentTarget);
-  const register = Object.fromEntries(formData);
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  createAPIEndpoint(ENDPOINTS.register)
-    .post(register)
-    .then((res) => {
-      navigate("/");
-    })
-    .catch((err) => console.log(err));
+    const formData = new FormData(e.currentTarget);
+    const register = Object.fromEntries(formData);
+
+    createAPIEndpoint(ENDPOINTS.register)
+      .post(register)
+      .then((res) => {
+        navigate("/register/success-register", { state: register });
+      })
+      .catch((err) => console.log(err));
+  };
+  return handleSubmit;
 }

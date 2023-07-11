@@ -10,6 +10,7 @@ import {
   Register,
   Setting,
   Singout,
+  SuccessRegister,
 } from "./pages";
 import {
   HomeLayout,
@@ -56,8 +57,10 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="sing-out" element={<Singout />} />
-              {/* // TODO: Create SuccessRegister page */}
-              {/* <Route path="register/success-register" element={} /> */}
+              <Route
+                path="register/success-register"
+                element={<SuccessRegister />}
+              />
             </Route>
             {/* Oder */}
             <Route path="about-us" element={<AboutUs />} />
