@@ -22,7 +22,6 @@ export default function useHandleLoginFormSubmit(values, setErrors) {
       createAPIEndpoint(ENDPOINTS.login)
         .post(login)
         .then((res) => {
-          console.log(res.data);
           if (validate(res.data)) {
             dispatch(loginUser(res.data));
             navigate("/user-panel");

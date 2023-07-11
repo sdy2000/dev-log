@@ -1,41 +1,49 @@
+import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import { BiUser, BiUserCircle } from "react-icons/bi";
+import { BsCalendar2Date, BsGenderAmbiguous } from "react-icons/bs";
+
 const Profile = () => {
   return (
-  <div>
-    <form action="" className="">
-      <div className="flex justify-between m-4 ">
-      <label htmlFor="" className="text-lfp dark:text-dfp uppercase">Name</label>
-      <input type="text" name="user-name" id="user-name"  className="rounded-lg text-lfs"/>
+    <div>
+      <h2 className="text-lg text-lfp dark:text-dfp font-bold border-b dark:border-lfp pb-2 px-4">
+        Dashboard
+      </h2>
+      <div className="flex flex-col justify-start px-6 gap-4 mt-6">
+        <h3 className="text-lg font-bold text-accent mb-4">User Info</h3>
+        <UserInfo
+          title="Full Name"
+          value="Sajad Darvish"
+          children={<BiUserCircle />}
+        />
+        <UserInfo title="User Name" value="@sdy2000" children={<BiUser />} />
+        <UserInfo
+          title="Email"
+          value="sajad@gamil.com"
+          children={<AiOutlineMail />}
+        />
+        <UserInfo
+          title="Phone Number"
+          value="+98 9370776595"
+          children={<AiOutlinePhone />}
+        />
+        <UserInfo
+          title="Register Date"
+          value="7/11/2023"
+          children={<BsCalendar2Date />}
+        />
+        <UserInfo title="Gender" value="Man" children={<BsGenderAmbiguous />} />
       </div>
-      <div className="flex justify-between m-4 ">
-      <label htmlFor="" className="text-lfp dark:text-dfp uppercase">Mail</label>
-      <input type="email" name="user-mail" id="user-mail"  className="rounded-lg text-lfs"/>
-      </div>
-      <div className="flex justify-between m-4 ">
-      <label htmlFor="" className="text-lfp dark:text-dfp uppercase">Phone</label>
-      <input type="number" name="user-phone" id="user-phone"  className="rounded-lg text-lfs" maxLength={12} minLength={0}/>
-      </div>
-      <div className="flex flex-row m-4">
-      <p  className="text-lfp dark:text-dfp uppercase">sex </p>
-      <div className="flex justify-end gap-4 w-[100%]">
-        <div>
-        <label htmlFor="sex-male" className="text-xl">Male</label>
-        <input type="radio" name="sex"  id="sex-male"  className="rounded-lg text-lfs w-4 h-4 mx-1 "/>
-        </div>
-      <div>
-      <label htmlFor="sex-female" className="text-xl">Female</label>
-      <input type="radio" name="sex" id="sex-female"  className="rounded-lg text-lfs w-4 h-4 mx-1"/>
-      </div>
-      <div>
-      <label htmlFor="sex-women" className="text-xl">Prefer To Not Say</label>
-      <input type="radio" name="sex" id="sex-women"  className="rounded-lg text-lfs w-4 h-4 mx-1"/>
-      </div>
-      </div>
-      </div>
-      <div>
+    </div>
+  );
+};
 
-      </div>
-    </form>
-  </div>
+const UserInfo = ({ title, value, children }) => {
+  return (
+    <div className="flex justify-start items-center gap-2">
+      <span className="text-xl text-lfp dark:text-dfp">{children}</span>
+      <b className="text-lfp dark:text-dfp">{title} : </b>
+      <i className="text-lfs dark:text-dfs">{value}</i>
+    </div>
   );
 };
 export default Profile;
