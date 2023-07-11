@@ -15,13 +15,14 @@ const getLoginModel = () => ({
   remember_me: true,
 });
 const Login = () => {
-  const { values, handleInputChange } = useForm(getLoginModel);
-  const handleSubmit = useHandleLoginFormSubmit();
+  const { values, errors, setErrors, handleInputChange } =
+    useForm(getLoginModel);
+  const handleSubmit = useHandleLoginFormSubmit(values, setErrors);
 
   return (
     <AccountBox title={"Log In"}>
       <form
-        className="flex flex-col items-center gap-8 w-full px-12"
+        className="flex flex-col items-center gap-4 w-full px-12"
         onSubmit={handleSubmit}
       >
         <AccountingInput
@@ -31,6 +32,7 @@ const Login = () => {
           placeholder={"Enter your email address..."}
           onChange={handleInputChange}
           value={values.email}
+          errors={errors.email}
         />
 
         <AccountingInput

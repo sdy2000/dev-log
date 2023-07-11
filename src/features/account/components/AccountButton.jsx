@@ -8,7 +8,7 @@ const AccountButton = ({ children, value }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoader(false);
-    }, 7000);
+    }, 5000);
 
     return () => {
       clearTimeout(timer);

@@ -16,8 +16,9 @@ const getRegisterModel = () => ({
 });
 
 const Register = () => {
-  const { values, handleInputChange } = useForm(getRegisterModel);
-  const handleSubmit = useHandleRegisterFormSubmit();
+  const { values, errors, setErrors, handleInputChange } =
+    useForm(getRegisterModel);
+  const handleSubmit = useHandleRegisterFormSubmit(values, setErrors);
 
   return (
     <AccountBox title={"Sign Up"}>
@@ -32,6 +33,7 @@ const Register = () => {
           placeholder={"Enter User Name..."}
           onChange={handleInputChange}
           value={values.user_name}
+          errors={errors.user_name}
         />
 
         <AccountingInput
@@ -41,6 +43,7 @@ const Register = () => {
           placeholder={"Enter your Email..."}
           onChange={handleInputChange}
           value={values.email}
+          errors={errors.email}
         />
 
         <AccountingInput
@@ -50,6 +53,7 @@ const Register = () => {
           placeholder={"Enter your password..."}
           onChange={handleInputChange}
           value={values.password}
+          errors={errors.password}
           hasIcon={true}
         />
         <AccountingInput
@@ -59,6 +63,7 @@ const Register = () => {
           placeholder={"Enter your RePassword..."}
           onChange={handleInputChange}
           value={values.re_password}
+          errors={errors.re_password}
           hasIcon={true}
         />
 

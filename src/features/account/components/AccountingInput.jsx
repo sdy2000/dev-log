@@ -10,35 +10,39 @@ const AccountingInput = ({
   value,
   isRequired = true,
   hasIcon = false,
+  errors = "",
 }) => {
   const [isShowPass, setIsShowPass] = useState(false);
   return (
-    <div className="accounting-input-div">
-      <input
-        type={isShowPass ? "text" : type}
-        name={name}
-        id={id}
-        placeholder={placeholder}
-        onChange={onChange}
-        value={value}
-        required={isRequired}
-      />
-      {hasIcon &&
-        (!isShowPass ? (
-          <BsEye
-            onClick={() => {
-              setIsShowPass(true);
-            }}
-            size={40}
-          />
-        ) : (
-          <BsEyeSlash
-            onClick={() => {
-              setIsShowPass(false);
-            }}
-            size={40}
-          />
-        ))}
+    <div className="flex flex-col justify-start gap-2 w-full">
+      <div className="accounting-input-div">
+        <input
+          type={isShowPass ? "text" : type}
+          name={name}
+          id={id}
+          placeholder={placeholder}
+          onChange={onChange}
+          value={value}
+          required={isRequired}
+        />
+        {hasIcon &&
+          (!isShowPass ? (
+            <BsEye
+              onClick={() => {
+                setIsShowPass(true);
+              }}
+              size={40}
+            />
+          ) : (
+            <BsEyeSlash
+              onClick={() => {
+                setIsShowPass(false);
+              }}
+              size={40}
+            />
+          ))}
+      </div>
+      {errors && <p className="text-red-600">{errors}</p>}
     </div>
   );
 };
