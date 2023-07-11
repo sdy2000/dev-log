@@ -54,8 +54,10 @@ function App() {
             {/* Account */}
             <Route element={<AccountLayout />}>
               <Route path="login" element={<Login />} />
-              <Route path="Register" element={<Register />} />
+              <Route path="register" element={<Register />} />
               <Route path="sing-out" element={<Singout />} />
+              {/* // TODO: Create SuccessRegister page */}
+              {/* <Route path="register/success-register" element={} /> */}
             </Route>
             {/* Oder */}
             <Route path="about-us" element={<AboutUs />} />

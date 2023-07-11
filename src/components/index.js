@@ -14,6 +14,3 @@ export { default as SocialBox } from "./card/SocialBox";
 
 // / // / // / // Time // / // / // / //
 export { default as CardTime } from "./showTime/CardTime";
-
-// / // / // / // Inputs // / // / // / //
-export { default as AccountingInput } from "./inputs/AccountingInput";
