@@ -1,7 +1,10 @@
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
-import { BiUserCircle } from "react-icons/bi";
+import { BiEditAlt, BiUserCircle } from "react-icons/bi";
 import { CiImageOn } from "react-icons/ci";
-import { ProfileInput } from "../../features/userPanel/outlet";
+import {
+  ProfileInput,
+  ProfileSubmitButton,
+} from "../../features/userPanel/outlet";
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { useState } from "react";
 import useForm from "../../hooks/useForm";
@@ -122,7 +125,6 @@ const EditProfile = () => {
               className="bg-lbs dark:bg-dbs placeholder:text-lft dark:placeholder:text-dft text-lfp dark:text-dfp w-full outline-none px-4"
               onChange={handleInputChange}
               value={values.gender}
-              errors={errors.gender}
             >
               <option value="DF">Choose a Gender</option>
               <option value="Man">Man</option>
@@ -131,7 +133,11 @@ const EditProfile = () => {
             </select>
           </div>
 
-          {/* {errors && <p className="text-red-600">{errors}</p>} */}
+          {errors.gender && <p className="text-red-600">{errors.gender}</p>}
+        </div>
+
+        <div className="w-fit">
+          <ProfileSubmitButton value="Edit Profile" children={<BiEditAlt />} />
         </div>
       </form>
     </div>

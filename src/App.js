@@ -9,7 +9,6 @@ import {
   PostDitails,
   Profile,
   Register,
-  Setting,
   Singout,
   SuccessRegister,
 } from "./pages";
@@ -72,7 +71,6 @@ function App() {
               <Route path="user-panel/" element={<Profile />} />
               <Route path="user-panel/edit" element={<EditProfile />} />
               <Route path="user-panel/edit-pass" element={<EditPassword />} />
-              <Route path="user-panel/setting" element={<Setting />} />
             </Route>
             {/* </Route> */}
           </Route>

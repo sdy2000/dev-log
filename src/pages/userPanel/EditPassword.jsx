@@ -1,7 +1,11 @@
 import { BsKey } from "react-icons/bs";
 import { GoKey } from "react-icons/go";
 import useForm from "../../hooks/useForm";
-import { ProfileInput } from "../../features/userPanel/outlet";
+import {
+  ProfileInput,
+  ProfileSubmitButton,
+} from "../../features/userPanel/outlet";
+import { CiEdit } from "react-icons/ci";
 
 const getEditPasswordModel = () => ({
   user_id: 0,
@@ -55,6 +59,10 @@ const EditPassword = () => {
           errors={errors.re_new_password}
           hasIcon={true}
         />
+
+        <div className="w-fit">
+          <ProfileSubmitButton value="Edit Password" children={<CiEdit />} />
+        </div>
       </form>
     </div>
   );

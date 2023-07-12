@@ -13,5 +13,4 @@ export { default as SuccessRegister } from "./account/SuccessRegister";
 export { default as Profile } from "./userPanel/Profile";
 export { default as EditProfile } from "./userPanel/EditProfile";
 export { default as EditPassword } from "./userPanel/EditPassword";
-export { default as Setting } from "./userPanel/Setting";
 export { default as Singout } from "./userPanel/Singout";
