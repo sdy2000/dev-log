@@ -9,9 +9,11 @@ import useWidthListener from "./hooks/useWidthListener";
 import HiddenHeaderBar from "./HiddenHeaderBar";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../context/features/modal/modal-slice";
+import { Singout } from "../../pages";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
+  const modal = useSelector((store) => store.modal);
   const dispatch = useDispatch();
   const scrollDirection = useScrollDirection();
   useWidthListener();
@@ -72,7 +74,13 @@ const Header = () => {
                   </li>
                   <li>\</li>
                   <li>
-                    <Link to="/sing-out">Sing out</Link>
+                    <Link
+                      onClick={() =>
+                        dispatch(openModal("profile_logout_alert_modal"))
+                      }
+                    >
+                      Sing out
+                    </Link>
                   </li>
                 </>
               )}
@@ -80,6 +88,8 @@ const Header = () => {
           </div>
 
           <HiddenHeaderBar />
+          {modal.modalId === "profile_logout_alert_modal" &&
+            modal.isOpen === true && <Singout />}
         </nav>
       </div>
     </header>

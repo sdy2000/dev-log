@@ -5,7 +5,11 @@ import { IoMdClose } from "react-icons/io";
 import { categories, topBar } from "./data/header-data";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { closeModal } from "../../context/features/modal/modal-slice";
+import {
+  closeModal,
+  openModal,
+} from "../../context/features/modal/modal-slice";
+import { Singout } from "../../pages";
 
 const HiddenHeaderBar = () => {
   const [clickStates, setClickStates] = useState({});
@@ -68,7 +72,13 @@ const HiddenHeaderBar = () => {
                 </li>
                 <li>\</li>
                 <li>
-                  <Link to="/sing-out">Sing out</Link>
+                  <Link
+                    onClick={() =>
+                      dispatch(openModal("profile_logout_alert_modal"))
+                    }
+                  >
+                    Sing out
+                  </Link>
                 </li>
               </>
             )}
@@ -123,6 +133,10 @@ const HiddenHeaderBar = () => {
           styles={"socail-icons flex items-center justify-center gap-3"}
         />
       </div>
+
+      {modalId === "profile_logout_alert_modal" && isOpen === true && (
+        <Singout />
+      )}
     </div>
   );
 };

@@ -1,14 +1,19 @@
 import { BiEdit } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { openModal } from "../../../context/features/modal/modal-slice";
+import { Singout } from "../../../pages";
 
 const panelBar = [
   { title: "Profile", slug: "user-panel" },
   { title: "Edit Profile", slug: "user-panel/edit" },
   { title: "Edit Password", slug: "user-panel/edit-pass" },
-  { title: "Sing Out", slug: "sing-out" },
 ];
 
 const UserPanelNavbar = () => {
+  const dispatch = useDispatch();
+  const modal = useSelector((store) => store.modal);
+
   return (
     <div className="col-span-2 relative w-full py-8 bg-lbp dark:bg-dbp rounded-xl shadow-lg overflow-hidden h-fit">
       <img
@@ -36,8 +41,19 @@ const UserPanelNavbar = () => {
               </Link>
             </li>
           ))}
+          <li className="border-b-2 dark:border-lfs pb-1 mt-5 hover:text-accent duration-300">
+            <Link
+              className="block"
+              title="Sign Out"
+              onClick={() => dispatch(openModal("profile_logout_alert_modal"))}
+            >
+              Sign Out
+            </Link>
+          </li>
         </ul>
       </div>
+      {modal.modalId === "profile_logout_alert_modal" &&
+        modal.isOpen === true && <Singout />}
     </div>
   );
 };

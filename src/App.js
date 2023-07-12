@@ -9,7 +9,6 @@ import {
   PostDitails,
   Profile,
   Register,
-  Singout,
   SuccessRegister,
 } from "./pages";
 import {
@@ -56,7 +55,6 @@ function App() {
             <Route element={<AccountLayout />}>
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
-              <Route path="sing-out" element={<Singout />} />
               <Route
                 path="register/success-register"
                 element={<SuccessRegister />}
