@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 const panelBar = [
   { title: "Profile", slug: "user-panel" },
-  { title: "Edit", slug: "user-panel/edit" },
-  { title: "setting", slug: "user-panel/setting" },
+  { title: "Edit Profile", slug: "user-panel/edit" },
+  { title: "Edit Password", slug: "user-panel/edit-pass" },
+  { title: "Profile Setting", slug: "user-panel/setting" },
   { title: "Sing Out", slug: "sing-out" },
 ];
 

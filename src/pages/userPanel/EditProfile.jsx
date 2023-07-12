@@ -19,7 +19,7 @@ const getEditProfileModel = () => ({
 
 const EditProfile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const { values, handleInputChange } = useForm(getEditProfileModel);
+  const { values, errors, handleInputChange } = useForm(getEditProfileModel);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -52,6 +52,7 @@ const EditProfile = () => {
             onInput={handleImageChange}
             onChange={handleInputChange}
             value={values.user_avatar}
+            errors={errors.user_avatar}
           />
         </div>
 
@@ -65,6 +66,7 @@ const EditProfile = () => {
             children={<BiUserCircle />}
             onChange={handleInputChange}
             value={values.first_name}
+            errors={errors.first_name}
           />
           <ProfileInput
             type="text"
@@ -75,6 +77,7 @@ const EditProfile = () => {
             children={<BiUserCircle />}
             onChange={handleInputChange}
             value={values.last_name}
+            errors={errors.last_name}
           />
         </div>
 
@@ -87,6 +90,7 @@ const EditProfile = () => {
           children={<AiOutlinePhone />}
           onChange={handleInputChange}
           value={values.phone}
+          errors={errors.phone}
         />
 
         <div className="flex flex-col gap-2">
@@ -99,6 +103,7 @@ const EditProfile = () => {
             children={<AiOutlineMail />}
             onChange={handleInputChange}
             value={values.email}
+            errors={errors.email}
           />
           <i className="text-lft dark:text-dft text-sm">
             * If them mail is changed, the activation email will be send to new
@@ -117,6 +122,7 @@ const EditProfile = () => {
               className="bg-lbs dark:bg-dbs placeholder:text-lft dark:placeholder:text-dft text-lfp dark:text-dfp w-full outline-none px-4"
               onChange={handleInputChange}
               value={values.gender}
+              errors={errors.gender}
             >
               <option value="DF">Choose a Gender</option>
               <option value="Man">Man</option>
