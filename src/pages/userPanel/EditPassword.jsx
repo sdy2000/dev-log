@@ -21,10 +21,10 @@ const EditPassword = () => {
 
   return (
     <div>
-      <h2 className="text-lg text-lfp dark:text-dfp font-bold border-b dark:border-lfp pb-2 px-4">
+      <h2 className="text-lg text-lfp dark:text-dfp font-bold border-b dark:border-lfp pb-2 px-2 md:px-4">
         Edit Password
       </h2>
-      <form className="flex flex-col justify-start px-6 gap-4 mt-6">
+      <form className="flex flex-col justify-start px-3 md:px-6 gap-4 mt-6">
         <h3 className="text-lg font-bold text-accent mb-4">Password Info</h3>
         <ProfileInput
           type="password"

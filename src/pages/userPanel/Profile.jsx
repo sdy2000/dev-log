@@ -5,10 +5,10 @@ import { BsCalendar2Date, BsGenderAmbiguous } from "react-icons/bs";
 const Profile = () => {
   return (
     <div>
-      <h2 className="text-lg text-lfp dark:text-dfp font-bold border-b dark:border-lfp pb-2 px-4">
+      <h2 className="text-lg text-lfp dark:text-dfp font-bold border-b dark:border-lfp pb-2 px-2 md:px-4">
         Dashboard
       </h2>
-      <div className="flex flex-col justify-start px-6 gap-4 mt-6">
+      <div className="flex flex-col justify-start px-3 md:px-6 gap-2 md:gap-4 mt-6">
         <h3 className="text-lg font-bold text-accent mb-4">User Info</h3>
         <UserInfo
           title="Full Name"
@@ -40,7 +40,7 @@ const Profile = () => {
 const UserInfo = ({ title, value, children }) => {
   return (
     <div className="flex justify-start items-center gap-2">
-      <span className="text-xl text-lfp dark:text-dfp">{children}</span>
+      <span className="md:text-xl text-lfp dark:text-dfp">{children}</span>
       <b className="text-lfp dark:text-dfp">{title} : </b>
       <i className="text-lfs dark:text-dfs">{value}</i>
     </div>

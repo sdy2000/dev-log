@@ -32,15 +32,15 @@ const EditProfile = () => {
 
   return (
     <div>
-      <h2 className="text-lg text-lfp dark:text-dfp font-bold border-b dark:border-lfp pb-2 px-4">
+      <h2 className="text-lg text-lfp dark:text-dfp font-bold border-b dark:border-lfp pb-2 px-2 md:px-4">
         Edit Profile
       </h2>
-      <form className="flex flex-col justify-start px-6 gap-4 mt-6">
+      <form className="flex flex-col justify-start px-3 md:px-6 gap-4 mt-6">
         <h3 className="text-lg font-bold text-accent mb-4">User Info</h3>
 
-        <div className="flex flex-row-reverse justify-start items-end gap-6 mb-4">
+        <div className="flex flex-col md:flex-row-reverse justify-start items-end gap-6 mb-4">
           <img
-            className="rounded-lg self-end w-32 h-32 object-cover"
+            className="rounded-lg self-center md:self-end w-32 h-32 object-cover"
             src={selectedImage ? selectedImage : `/assets/img/sdy2000.jpg`}
             alt="Profile IMG"
           />
@@ -59,7 +59,7 @@ const EditProfile = () => {
           />
         </div>
 
-        <div className="flex justify-center items-center gap-6">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
           <ProfileInput
             type="text"
             name="first_name"

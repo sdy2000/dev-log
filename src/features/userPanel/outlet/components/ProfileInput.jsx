@@ -22,7 +22,7 @@ const ProfileInput = ({
           {children}
         </span>
         <input
-          className="bg-lbs dark:bg-dbs placeholder:text-lft dark:placeholder:text-dft text-lfp dark:text-dfp w-full outline-none px-4"
+          className="bg-lbs dark:bg-dbs placeholder:text-lft dark:placeholder:text-dft placeholder:text-sm md:placeholder:text-base text-sm md:text-base text-lfp dark:text-dfp w-full outline-none px-4"
           type={isShowPass ? "text" : type}
           name={name}
           id={id}
