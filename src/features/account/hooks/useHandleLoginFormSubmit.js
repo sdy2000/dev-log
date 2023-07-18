@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
-import { ENDPOINTS, createAPIEndpoint } from "../../../service/api";
-import { loginUser } from "../../../context/features/user/user-slice";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { getUser } from "../../../context/features/user/getUser";
+import { useEffect } from "react";
 
 export default function useHandleLoginFormSubmit(values, setErrors) {
+  const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -19,17 +20,15 @@ export default function useHandleLoginFormSubmit(values, setErrors) {
     }
 
     if (validate()) {
-      createAPIEndpoint(ENDPOINTS.login)
-        .post(login)
-        .then((res) => {
-          if (validate(res.data)) {
-            dispatch(loginUser(res.data));
-            navigate("/user-panel");
-          }
-        })
-        .catch((err) => console.log(err));
+      dispatch(getUser(login));
     }
   };
+
+  useEffect(() => {
+    if (validate(user)) {
+      navigate("/user-panel");
+    }
+  }, [user, navigate]);
 
   // Login Validation
   const validate = (data) => {

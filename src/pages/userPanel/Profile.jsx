@@ -1,34 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
 import { BiUser, BiUserCircle } from "react-icons/bi";
 import { BsCalendar2Date, BsGenderAmbiguous } from "react-icons/bs";
-import { ENDPOINTS, createAPIEndpoint } from "../../service/api";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-  const [userInfo, setUserInfo] = useState({});
   const user = useSelector((store) => store.user);
   const navigate = useNavigate();
 
   useEffect(() => {
-    createAPIEndpoint(ENDPOINTS.user_info)
-      .post(user)
-      .then((res) => {
-        if (res.data) {
-          setUserInfo(res.data);
-        } else {
-          navigate("/login");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-    return () => {
-      setUserInfo({});
-    };
-  }, [navigate, user]);
+    if (user.user_id === 0) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
 
   return (
     <div>
@@ -37,39 +22,39 @@ const Profile = () => {
       </h2>
       <div className="flex flex-col justify-start px-3 md:px-6 gap-2 md:gap-4 mt-6">
         <h3 className="text-lg font-bold text-accent mb-4">User Info</h3>
-        {userInfo.first_name && userInfo.last_name && (
+        {user.first_name && user.last_name && (
           <UserInfo
             title="Full Name"
-            value={userInfo.first_name + " " + userInfo.last_name}
+            value={user.first_name + " " + user.last_name}
             children={<BiUserCircle />}
           />
         )}
 
         <UserInfo
           title="User Name"
-          value={`@${userInfo.user_name}`}
+          value={`@${user.user_name}`}
           children={<BiUser />}
         />
         <UserInfo
           title="Email"
-          value={userInfo.email}
+          value={user.email}
           children={<AiOutlineMail />}
         />
-        {userInfo.phone && (
+        {user.phone && (
           <UserInfo
             title="Phone Number"
-            value={userInfo.phone}
+            value={user.phone}
             children={<AiOutlinePhone />}
           />
         )}
         <UserInfo
           title="Register Date"
-          value={userInfo.register_date}
+          value={user.register_date}
           children={<BsCalendar2Date />}
         />
-        {userInfo.gender && (
+        {user.gender && (
           <UserInfo
-            title={userInfo.gender}
+            title={user.gender}
             value="Man"
             children={<BsGenderAmbiguous />}
           />

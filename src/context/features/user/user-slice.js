@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getUser } from "./getUser";
 
 const initialState = () => {
   if (localStorage.getItem("user") === null) {
@@ -8,6 +9,13 @@ const initialState = () => {
         user_id: 0,
         user_name: "",
         email: "",
+        user_avatar: "",
+        first_name: "",
+        last_name: "",
+        phone: "",
+        gender: "",
+        register_date: "",
+        isLoading: true,
       })
     );
   }
@@ -19,22 +27,42 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    loginUser: (state, { payload }) => {
-      state.user_id = payload.user_id;
-      state.user_name = payload.user_name;
-      state.email = payload.email;
-
-      localStorage.setItem("user", JSON.stringify(state));
-    },
     logoutUser: (state) => {
       state.user_id = 0;
       state.user_name = "";
       state.email = "";
+      state.user_avatar = "";
+      state.first_name = "";
+      state.last_name = "";
+      state.phone = "";
+      state.gender = "";
+      state.register_date = "";
 
       localStorage.setItem("user", JSON.stringify(state));
     },
   },
-  extraReducers: (builder) => {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getUser.fulfilled, (state, action) => {
+        state.user_id = action.payload.user_id;
+        state.user_name = action.payload.user_name;
+        state.email = action.payload.email;
+        state.user_avatar = action.payload.user_avatar;
+        state.first_name = action.payload.first_name;
+        state.last_name = action.payload.last_name;
+        state.phone = action.payload.phone;
+        state.gender = action.payload.gender;
+        state.register_date = action.payload.register_date;
+
+        localStorage.setItem("user", JSON.stringify(state));
+      })
+      .addCase(getUser.rejected, (state) => {
+        state.isLoading = true;
+      });
+  },
 });
 
 export const { loginUser, logoutUser } = userSlice.actions;
