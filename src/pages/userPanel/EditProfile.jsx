@@ -4,6 +4,7 @@ import { CiImageOn } from "react-icons/ci";
 import {
   ProfileInput,
   ProfileSubmitButton,
+  useHandleSubmitEditProfile,
 } from "../../features/userPanel/outlet";
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { useState } from "react";
@@ -22,7 +23,10 @@ const getEditProfileModel = () => ({
 
 const EditProfile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const { values, errors, handleInputChange } = useForm(getEditProfileModel);
+  const { values, errors, setErrors, handleInputChange } =
+    useForm(getEditProfileModel);
+
+  const handleSubmit = useHandleSubmitEditProfile(values, setErrors);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -35,10 +39,13 @@ const EditProfile = () => {
       <h2 className="text-lg text-lfp dark:text-dfp font-bold border-b dark:border-lfp pb-2 px-2 md:px-4">
         Edit Profile
       </h2>
-      <form className="flex flex-col justify-start px-3 md:px-6 gap-4 mt-6">
+      <form
+        className="flex flex-col justify-start px-3 md:px-6 gap-4 mt-6"
+        onSubmit={handleSubmit}
+      >
         <h3 className="text-lg font-bold text-accent mb-4">User Info</h3>
 
-        <div className="flex flex-col md:flex-row-reverse justify-start items-end gap-6 mb-4">
+        <div className="flex flex-col md:flex-row-reverse justify-start md:justify-between items-end gap-6 mb-4">
           <img
             className="rounded-lg self-center md:self-end w-32 h-32 object-cover"
             src={selectedImage ? selectedImage : `/assets/img/sdy2000.jpg`}
