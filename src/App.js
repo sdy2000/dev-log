@@ -3,7 +3,7 @@ import {
   AboutUs,
   ContactUs,
   EditPassword,
-  EditProfile,
+  EditProfilePage,
   HomeIndex,
   Login,
   PostDitails,
@@ -67,7 +67,7 @@ function App() {
             {/* <Route element={<Authenticate />}> */}
             <Route element={<UserPanelLayout />}>
               <Route path="user-panel/" element={<Profile />} />
-              <Route path="user-panel/edit" element={<EditProfile />} />
+              <Route path="user-panel/edit" element={<EditProfilePage />} />
               <Route path="user-panel/edit-pass" element={<EditPassword />} />
             </Route>
             {/* </Route> */}
