@@ -27,6 +27,19 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    updateUser: (state, { payload }) => {
+      state.user_id = payload.user_id;
+      state.user_name = payload.user_name;
+      state.email = payload.email;
+      state.user_avatar = payload.user_avatar;
+      state.first_name = payload.first_name;
+      state.last_name = payload.last_name;
+      state.phone = payload.phone;
+      state.gender = payload.gender;
+      state.register_date = payload.register_date;
+
+      localStorage.setItem("user", JSON.stringify(state));
+    },
     logoutUser: (state) => {
       state.user_id = 0;
       state.user_name = "";
@@ -65,6 +78,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { loginUser, logoutUser } = userSlice.actions;
+export const { loginUser, logoutUser, updateUser } = userSlice.actions;
 
 export default userSlice.reducer;

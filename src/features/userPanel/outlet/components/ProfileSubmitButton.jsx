@@ -2,12 +2,12 @@ import { useState } from "react";
 import AccountLoader from "./ProfileLoader";
 import { useEffect } from "react";
 
-const ProfileSubmitButton = ({ children, value, isUpload }) => {
+const ProfileSubmitButton = ({ children, value, isLoader }) => {
   const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     setLoader(false);
-  }, [isUpload]);
+  }, [isLoader]);
 
   return (
     <button

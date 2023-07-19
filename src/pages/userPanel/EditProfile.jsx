@@ -9,6 +9,8 @@ import {
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { useState } from "react";
 import useForm from "../../hooks/useForm";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const getEditProfileModel = () => ({
   user_id: 0,
@@ -22,17 +24,41 @@ const getEditProfileModel = () => ({
 });
 
 const EditProfile = () => {
+  const user = useSelector((store) => store.user);
   const [selectedImage, setSelectedImage] = useState(null);
-  const { values, errors, setErrors, handleInputChange } =
+  const [load, setLoad] = useState(true);
+  const { values, setValues, errors, setErrors, handleInputChange } =
     useForm(getEditProfileModel);
 
-  const handleSubmit = useHandleSubmitEditProfile(values, setErrors);
+  const handleSubmit = useHandleSubmitEditProfile(
+    values,
+    setErrors,
+    load,
+    setLoad
+  );
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     const imageUrl = URL.createObjectURL(file);
     setSelectedImage(imageUrl);
   };
+
+  useEffect(() => {
+    setValues({
+      ...values,
+      user_id: user.user_id,
+      user_name: user.user_name,
+      email: user.email,
+      first_name: user.first_name || "",
+      last_name: user.last_name || "",
+      phone: user.phone || 0,
+      gender: user.gender || "DF",
+    });
+
+    return () => {
+      setValues({});
+    };
+  }, []);
 
   return (
     <div>
@@ -144,7 +170,11 @@ const EditProfile = () => {
         </div>
 
         <div className="w-fit">
-          <ProfileSubmitButton value="Edit Profile" children={<BiEditAlt />} />
+          <ProfileSubmitButton
+            value="Edit Profile"
+            isLoader={load}
+            children={<BiEditAlt />}
+          />
         </div>
       </form>
     </div>

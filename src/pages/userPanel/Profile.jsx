@@ -52,10 +52,10 @@ const Profile = () => {
           value={user.register_date}
           children={<BsCalendar2Date />}
         />
-        {user.gender && (
+        {user.gender && user.gender !== "DF" && (
           <UserInfo
-            title={user.gender}
-            value="Man"
+            title="Gender"
+            value={user.gender}
             children={<BsGenderAmbiguous />}
           />
         )}
