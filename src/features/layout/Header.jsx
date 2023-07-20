@@ -10,6 +10,7 @@ import HiddenHeaderBar from "./HiddenHeaderBar";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../context/features/modal/modal-slice";
 import { Singout } from "../../pages";
+import { BASE_URL } from "../../service/api";
 
 const Header = () => {
   const user = useSelector((store) => store.user);
@@ -70,7 +71,21 @@ const Header = () => {
               ) : (
                 <>
                   <li>
-                    <Link to="/user-panel">{user.user_name}</Link>
+                    <Link
+                      to="/user-panel"
+                      className="flex justify-center items-center gap-2"
+                    >
+                      <img
+                        className="rounded-full w-8 h-8 object-cover"
+                        src={
+                          BASE_URL +
+                          "wwwroot/UserAvatar/IconSize/" +
+                          user.user_avatar
+                        }
+                        alt="Profile IMG"
+                      />
+                      <span>{user.user_name}</span>
+                    </Link>
                   </li>
                   <li>\</li>
                   <li>

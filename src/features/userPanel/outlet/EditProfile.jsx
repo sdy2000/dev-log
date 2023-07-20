@@ -10,12 +10,13 @@ import {
   useHandleSubmitEditProfile,
 } from ".";
 import useForm from "../../../hooks/useForm";
+import { BASE_URL } from "../../../service/api";
 
 const getEditProfileModel = () => ({
   user_id: 0,
   user_name: "",
   email: "",
-  user_avatar: "",
+  user_avatar: null,
   first_name: "",
   last_name: "",
   phone: "",
@@ -37,9 +38,24 @@ const EditProfile = () => {
   );
 
   const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    const imageUrl = URL.createObjectURL(file);
-    setSelectedImage(imageUrl);
+    if (event.target.files && event.target.files[0]) {
+      let imageFile = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (x) => {
+        setValues({
+          ...values,
+          imageFile,
+        });
+      };
+      const imageUrl = URL.createObjectURL(imageFile);
+      setSelectedImage(imageUrl);
+      reader.readAsDataURL(imageFile);
+    } else {
+      setValues({
+        ...values,
+        imageFile: null,
+      });
+    }
   };
 
   useEffect(() => {
@@ -69,7 +85,11 @@ const EditProfile = () => {
       <div className="flex flex-col md:flex-row-reverse justify-start md:justify-between items-end gap-6 mb-4">
         <img
           className="rounded-lg self-center md:self-end w-32 h-32 object-cover"
-          src={selectedImage ? selectedImage : `/assets/img/sdy2000.jpg`}
+          src={
+            selectedImage
+              ? selectedImage
+              : BASE_URL + "wwwroot/UserAvatar/ThumbSize/" + user.user_avatar
+          }
           alt="Profile IMG"
         />
 
@@ -80,9 +100,7 @@ const EditProfile = () => {
           placeholder="Set Your Avatar ..."
           isRequired={false}
           children={<CiImageOn />}
-          onInput={handleImageChange}
-          onChange={handleInputChange}
-          value={values.user_avatar}
+          onChange={handleImageChange}
           errors={errors.user_avatar}
         />
       </div>

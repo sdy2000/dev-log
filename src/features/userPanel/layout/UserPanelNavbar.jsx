@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { openModal } from "../../../context/features/modal/modal-slice";
 import { Singout } from "../../../pages";
+import { BASE_URL } from "../../../service/api";
 
 const panelBar = [
   { title: "Profile", slug: "user-panel" },
@@ -13,6 +14,7 @@ const panelBar = [
 const UserPanelNavbar = () => {
   const dispatch = useDispatch();
   const modal = useSelector((store) => store.modal);
+  const user = useSelector((store) => store.user);
 
   return (
     <div className="col-span-2 relative w-full py-8 bg-lbp dark:bg-dbp rounded-xl shadow-lg overflow-hidden h-fit max-w-sm">
@@ -25,7 +27,7 @@ const UserPanelNavbar = () => {
         <Link to={"user-panel/edit"} className="relative w-full">
           <img
             className="absolute left-[30%] -top-24 rounded-full w-28 h-28 object-cover"
-            src="./assets/img/sdy2000.jpg"
+            src={BASE_URL + "wwwroot/UserAvatar/ThumbSize/" + user.user_avatar}
             alt="Profile IMG"
           />
           <BiEdit className="absolute left-[32%] -top-[5.5rem] text-opacity-0 rounded-full text-white hover:bg-white hover:text-opacity-80 hover:bg-opacity-50 text-8xl duration-300" />
