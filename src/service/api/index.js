@@ -10,6 +10,7 @@ export const ENDPOINTS = {
   // USER PANEL
   user_info: "userPanel/user-info",
   user_edit: "userPanel/user-edit",
+  user_pass: "userPanel/user-pass",
 };
 
 export const createAPIEndpoint = (endpoint) => {

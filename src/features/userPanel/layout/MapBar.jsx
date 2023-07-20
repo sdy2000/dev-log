@@ -8,8 +8,8 @@ const MapBar = () => {
     switch (map) {
       case "/edit":
         return "Edit Profile";
-      case "/setting":
-        return "Profile Setting";
+      case "/edit-pass":
+        return "Edit Password";
       default:
         return "";
     }

@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   AboutUs,
   ContactUs,
-  EditPassword,
+  EditPasswordPage,
   EditProfilePage,
   HomeIndex,
   Login,
@@ -68,7 +68,10 @@ function App() {
             <Route element={<UserPanelLayout />}>
               <Route path="user-panel/" element={<Profile />} />
               <Route path="user-panel/edit" element={<EditProfilePage />} />
-              <Route path="user-panel/edit-pass" element={<EditPassword />} />
+              <Route
+                path="user-panel/edit-pass"
+                element={<EditPasswordPage />}
+              />
             </Route>
             {/* </Route> */}
           </Route>

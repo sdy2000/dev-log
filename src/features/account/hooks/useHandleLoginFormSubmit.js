@@ -33,7 +33,7 @@ export default function useHandleLoginFormSubmit(values, setErrors) {
   // Login Validation
   const validate = (data) => {
     let temp = {};
-    temp.email = /\S+@\S+\.\S+/.test(values.email)
+    temp.email = /\S+@\S+\.\S+/.test(values?.email)
       ? ""
       : "Email is not valid !";
     temp.email =
