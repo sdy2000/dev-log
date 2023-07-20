@@ -22,12 +22,7 @@ const EditPassword = () => {
     useForm(getEditPasswordModel);
   const [load, setLoad] = useState(true);
 
-  const handleSubmit = useHandleSubmitEditPassword(
-    values,
-    setErrors,
-    load,
-    setLoad
-  );
+  const handleSubmit = useHandleSubmitEditPassword(setErrors, load, setLoad);
 
   return (
     <form

@@ -1,9 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ENDPOINTS, createAPIEndpoint } from "../../../../service/api";
+import { useNavigate } from "react-router-dom";
+import { logoutUser } from "../../../../context/features/user/user-slice";
 
-export default function useHandleSubmitEditPassword() {
+export default function useHandleSubmitEditPassword(setErrors, load, setLoad) {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,30 +16,44 @@ export default function useHandleSubmitEditPassword() {
     formData.append("user_name", user.user_name);
     const pass = Object.fromEntries(formData);
 
-    if (!validation(pass)) {
+    if (validation(pass)) {
       createAPIEndpoint(ENDPOINTS.user_pass)
         .post(pass)
         .then((res) => {
-          console.log(res.data);
+          setLoad(!load);
+          if (validation(res.data)) {
+            dispatch(logoutUser());
+            navigate("/login");
+          }
         })
         .catch((err) => {
+          setLoad(!load);
           console.log(err);
         });
+    } else {
+      setLoad(!load);
     }
   };
-
   const validation = (data) => {
     let temp = {};
 
-    temp.old_password = "";
+    if (data.is_old_pass_true !== undefined) {
+      temp.old_password = !data.is_old_pass_true
+        ? "Old Password is incorrect"
+        : "";
+    }
     temp.new_password =
-      data.new_password.length < 6
+      data?.new_password?.length < 6
         ? "Your password must have at least 6 characters !"
         : "";
     temp.re_new_password =
-      data.new_password !== data.re_new_password
+      data.new_password !== data?.re_new_password
         ? "The entered RePassword is incorrect !"
         : "";
+
+    setErrors(temp);
+
+    return Object.values(temp).every((x) => x === "");
   };
 
   return handleSubmit;
