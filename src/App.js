@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   AboutUs,
+  ActiveAccount,
   ContactUs,
   EditPasswordPage,
   EditProfilePage,
@@ -55,6 +56,7 @@ function App() {
             <Route element={<AccountLayout />}>
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
+              <Route path="register/:active_code" element={<ActiveAccount />} />
               <Route
                 path="register/success-register"
                 element={<SuccessRegister />}

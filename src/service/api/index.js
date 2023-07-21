@@ -6,6 +6,7 @@ export const ENDPOINTS = {
   // ACCOUNT
   register: "account/register",
   login: "account/login",
+  active_account: "account/active-account",
 
   // USER PANEL
   user_info: "userPanel/user-info",
