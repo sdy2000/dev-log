@@ -21,12 +21,16 @@ export default function useHandleForgotPasswordSubmit(
           if (validate(res.data)) {
             setLoader(false);
             navigate("/login/forgot-pass/success", { state: forgotPass });
+          } else {
+            setLoader(false);
           }
         })
         .catch((err) => {
           console.log(err);
           setLoader(false);
         });
+    } else {
+      setLoader(false);
     }
   };
 
@@ -40,13 +44,17 @@ export default function useHandleForgotPasswordSubmit(
       : "Email is not valid !";
 
     // After Submit form to service
-    temp.user_name = !data?.is_success
-      ? "Something is wrong, please try again later !"
-      : "";
-    temp.email = data?.is_exist_email ? "This Email not exist !" : "";
-    temp.user_name = data?.is_send_edit_pass
-      ? "Something is wrong, please try again later !"
-      : "";
+    if (data?.is_success !== undefined) {
+      temp.email = !data?.is_exist_email ? "This Email not exist !" : "";
+      if (!temp)
+        temp.email = !data?.is_send_edit_pass
+          ? "Something is wrong, please try again later !"
+          : "";
+      if (!temp)
+        temp.email = !data?.is_success
+          ? "Something is wrong, please try again later !"
+          : "";
+    }
     setErrors(temp);
 
     return Object.values(temp).every((x) => x === "");
