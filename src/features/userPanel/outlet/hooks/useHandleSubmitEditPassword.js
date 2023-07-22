@@ -3,7 +3,7 @@ import { ENDPOINTS, createAPIEndpoint } from "../../../../service/api";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from "../../../../context/features/user/user-slice";
 
-export default function useHandleSubmitEditPassword(setErrors, load, setLoad) {
+export default function useHandleSubmitEditPassword(setErrors, setLoader) {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,18 +20,18 @@ export default function useHandleSubmitEditPassword(setErrors, load, setLoad) {
       createAPIEndpoint(ENDPOINTS.user_pass)
         .post(pass)
         .then((res) => {
-          setLoad(!load);
+          setLoader(false);
           if (validation(res.data)) {
             dispatch(logoutUser());
             navigate("/login");
           }
         })
         .catch((err) => {
-          setLoad(!load);
+          setLoader(false);
           console.log(err);
         });
     } else {
-      setLoad(!load);
+      setLoader(false);
     }
   };
   const validation = (data) => {

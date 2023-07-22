@@ -20,9 +20,9 @@ const getEditPasswordModel = () => ({
 const EditPassword = () => {
   const { values, errors, setErrors, handleInputChange } =
     useForm(getEditPasswordModel);
-  const [load, setLoad] = useState(true);
+  const [loader, setLoader] = useState(false);
 
-  const handleSubmit = useHandleSubmitEditPassword(setErrors, load, setLoad);
+  const handleSubmit = useHandleSubmitEditPassword(setErrors, setLoader);
 
   return (
     <form
@@ -67,7 +67,8 @@ const EditPassword = () => {
       <div className="w-fit">
         <ProfileSubmitButton
           value="Edit Password"
-          isLoader={load}
+          loader={loader}
+          setLoader={setLoader}
           children={<CiEdit />}
         />
       </div>

@@ -1,7 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { ENDPOINTS, createAPIEndpoint } from "../../../service/api";
 
-export default function useHandleRegisterFormSubmit(values, setErrors) {
+export default function useHandleRegisterFormSubmit(
+  values,
+  setErrors,
+  setLoader
+) {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -14,12 +18,15 @@ export default function useHandleRegisterFormSubmit(values, setErrors) {
       createAPIEndpoint(ENDPOINTS.register)
         .post(register)
         .then((res) => {
-          console.log(res.data);
           if (validate(res.data)) {
+            setLoader(false);
             navigate("/register/success-register", { state: register });
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          setLoader(false);
+        });
     }
   };
 

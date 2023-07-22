@@ -1,14 +1,6 @@
-import { useState } from "react";
 import AccountLoader from "./ProfileLoader";
-import { useEffect } from "react";
 
-const ProfileSubmitButton = ({ children, value, isLoader }) => {
-  const [loader, setLoader] = useState(false);
-
-  useEffect(() => {
-    setLoader(false);
-  }, [isLoader]);
-
+const ProfileSubmitButton = ({ children, value, loader, setLoader }) => {
   return (
     <button
       onClick={() => setLoader(true)}

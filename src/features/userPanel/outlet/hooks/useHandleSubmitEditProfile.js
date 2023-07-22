@@ -1,15 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ENDPOINTS, createAPIEndpoint } from "../../../../service/api";
-import { updateUser } from "../../../../context/features/user/user-slice";
+import {
+  logoutUser,
+  updateUser,
+} from "../../../../context/features/user/user-slice";
+import { useNavigate } from "react-router-dom";
 
 export default function useHandleSubmitEditProfile(
   values,
   setErrors,
-  load,
-  setLoad
+  setLoader
 ) {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,13 +26,17 @@ export default function useHandleSubmitEditProfile(
     createAPIEndpoint(ENDPOINTS.user_edit)
       .post(formData)
       .then((res) => {
-        setLoad(!load);
+        setLoader(false);
         if (validate(res.data)) {
           dispatch(updateUser(res.data.user));
+          if (res.data.is_send_active_code) {
+            dispatch(logoutUser());
+            navigate("/login");
+          }
         }
       })
       .catch((err) => {
-        setLoad(!load);
+        setLoader(false);
         console.log(err);
       });
   };

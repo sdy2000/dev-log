@@ -26,16 +26,11 @@ const getEditProfileModel = () => ({
 const EditProfile = () => {
   const user = useSelector((store) => store.user);
   const [selectedImage, setSelectedImage] = useState(null);
-  const [load, setLoad] = useState(true);
+  const [loader, setLoader] = useState(false);
   const { values, setValues, errors, setErrors, handleInputChange } =
     useForm(getEditProfileModel);
 
-  const handleSubmit = useHandleSubmitEditProfile(
-    values,
-    setErrors,
-    load,
-    setLoad
-  );
+  const handleSubmit = useHandleSubmitEditProfile(values, setErrors, setLoader);
 
   const handleImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -185,7 +180,8 @@ const EditProfile = () => {
       <div className="w-fit">
         <ProfileSubmitButton
           value="Edit Profile"
-          isLoader={load}
+          loader={loader}
+          setLoader={setLoader}
           children={<BiEditAlt />}
         />
       </div>

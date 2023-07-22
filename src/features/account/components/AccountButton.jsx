@@ -1,20 +1,6 @@
-import { useState } from "react";
 import AccountLoader from "./AccountLoader";
-import { useEffect } from "react";
 
-const AccountButton = ({ children, value }) => {
-  const [loader, setLoader] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoader(false);
-    }, 5000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [loader]);
-
+const AccountButton = ({ children, value, loader, setLoader }) => {
   return (
     <button
       onClick={() => setLoader(true)}

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getUser } from "../../../context/features/user/getUser";
 import { useEffect } from "react";
 
-export default function useHandleLoginFormSubmit(values, setErrors) {
+export default function useHandleLoginFormSubmit(values, setErrors, setLoader) {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,6 +21,7 @@ export default function useHandleLoginFormSubmit(values, setErrors) {
 
     if (validate()) {
       dispatch(getUser(login));
+      setLoader(false);
     }
   };
 

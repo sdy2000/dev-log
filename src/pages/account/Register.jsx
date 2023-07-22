@@ -7,6 +7,7 @@ import {
   useHandleRegisterFormSubmit,
 } from "../../features/account";
 import { FiUserPlus } from "react-icons/fi";
+import { useState } from "react";
 
 const getRegisterModel = () => ({
   user_name: "",
@@ -16,9 +17,14 @@ const getRegisterModel = () => ({
 });
 
 const Register = () => {
+  const [loader, setLoader] = useState(false);
   const { values, errors, setErrors, handleInputChange } =
     useForm(getRegisterModel);
-  const handleSubmit = useHandleRegisterFormSubmit(values, setErrors);
+  const handleSubmit = useHandleRegisterFormSubmit(
+    values,
+    setErrors,
+    setLoader
+  );
 
   return (
     <AccountBox title={"Sign Up"}>
@@ -76,7 +82,12 @@ const Register = () => {
           </b>
         </div>
 
-        <AccountButton value={"Sing Up"} children={<FiUserPlus />} />
+        <AccountButton
+          value={"Sing Up"}
+          loader={loader}
+          setLoader={setLoader}
+          children={<FiUserPlus />}
+        />
       </form>
     </AccountBox>
   );

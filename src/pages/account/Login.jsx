@@ -8,6 +8,7 @@ import {
   useHandleLoginFormSubmit,
 } from "../../features/account";
 import { FiLogIn } from "react-icons/fi";
+import { useState } from "react";
 
 const getLoginModel = () => ({
   email: "",
@@ -15,9 +16,10 @@ const getLoginModel = () => ({
   remember_me: true,
 });
 const Login = () => {
+  const [loader, setLoader] = useState(false);
   const { values, errors, setErrors, handleInputChange } =
     useForm(getLoginModel);
-  const handleSubmit = useHandleLoginFormSubmit(values, setErrors);
+  const handleSubmit = useHandleLoginFormSubmit(values, setErrors, setLoader);
 
   return (
     <AccountBox title={"Log In"}>
@@ -87,7 +89,12 @@ const Login = () => {
           </div>
         </div>
 
-        <AccountButton value={"Log In"} children={<FiLogIn />} />
+        <AccountButton
+          value={"Log In"}
+          loader={loader}
+          setLoader={setLoader}
+          children={<FiLogIn />}
+        />
       </form>
     </AccountBox>
   );
