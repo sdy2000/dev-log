@@ -9,6 +9,7 @@ export { default as Login } from "./account/Login";
 export { default as ForgotPassword } from "./account/ForgotPassword";
 export { default as SuccessForgotPassword } from "./account/SuccessForgotPassword";
 export { default as RetrievePassword } from "./account/RetrievePassword";
+export { default as SuccessRetievePassword } from "./account/SuccessRetievePassword";
 export { default as Register } from "./account/Register";
 export { default as SuccessRegister } from "./account/SuccessRegister";
 export { default as ActiveAccount } from "./account/ActiveAccount";

@@ -14,6 +14,7 @@ import {
   RetrievePassword,
   SuccessForgotPassword,
   SuccessRegister,
+  SuccessRetievePassword,
 } from "./pages";
 import {
   HomeLayout,
@@ -66,6 +67,10 @@ function App() {
               <Route
                 path="login/retrieve-pass/:active_code"
                 element={<RetrievePassword />}
+              />
+              <Route
+                path="login/success-retrieve"
+                element={<SuccessRetievePassword />}
               />
               <Route path="register" element={<Register />} />
               <Route path="register/:active_code" element={<ActiveAccount />} />

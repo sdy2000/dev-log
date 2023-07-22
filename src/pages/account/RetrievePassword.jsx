@@ -7,6 +7,7 @@ import {
 } from "../../features/account";
 import useForm from "../../hooks/useForm";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const getRetrieveModel = () => ({
   active_code: "",
@@ -15,11 +16,13 @@ const getRetrieveModel = () => ({
 });
 
 const RetrievePassword = () => {
+  const { active_code } = useParams();
   const [loader, setLoader] = useState(false);
   const { values, errors, setErrors, handleInputChange } =
     useForm(getRetrieveModel);
   const handleSubmit = useHandleRetrievePasswordSubmit(
     values,
+    active_code,
     setErrors,
     setLoader
   );

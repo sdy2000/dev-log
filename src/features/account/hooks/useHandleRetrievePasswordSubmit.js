@@ -3,6 +3,7 @@ import { ENDPOINTS, createAPIEndpoint } from "../../../service/api";
 
 export default function useHandleRetrievePasswordSubmit(
   values,
+  active_code,
   setErrors,
   setLoader
 ) {
@@ -12,6 +13,7 @@ export default function useHandleRetrievePasswordSubmit(
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
+    formData.append("active_code", active_code);
     const retrievePass = Object.fromEntries(formData);
 
     if (validate()) {
@@ -20,13 +22,17 @@ export default function useHandleRetrievePasswordSubmit(
         .then((res) => {
           if (validate(res.data)) {
             setLoader(false);
-            // navigate("/login/forgot-pass/success", { state: retrievePass });
+            navigate("/login/success-retrieve", { state: res.data });
+          } else {
+            setLoader(false);
           }
         })
         .catch((err) => {
           console.log(err);
           setLoader(false);
         });
+    } else {
+      setLoader(false);
     }
   };
 
@@ -45,10 +51,16 @@ export default function useHandleRetrievePasswordSubmit(
         : "";
 
     // After Submit form to service
-    temp.password = !data?.is_success
-      ? "Your Retrieve Password is failed !"
-      : "";
-    temp.password = data?.is_exist_user ? "This account is not exists !" : "";
+    if (data?.is_success !== undefined) {
+      temp.password = !data?.is_exist_user
+        ? "This account is not exists !"
+        : "";
+      if (!temp)
+        temp.password = !data?.is_success
+          ? "Your Retrieve Password is failed !"
+          : "";
+    }
+
     setErrors(temp);
 
     return Object.values(temp).every((x) => x === "");
