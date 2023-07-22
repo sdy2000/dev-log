@@ -76,7 +76,7 @@ const Login = () => {
               If forgot your password click here
             </p>
             <b className="text-accent hover:underline ml-2">
-              <Link to="#">Forgot Password</Link>
+              <Link to="/login/forgot-pass">Forgot Password</Link>
             </b>
           </div>
           <div className="flex justify-start items-center">

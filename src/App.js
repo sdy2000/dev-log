@@ -5,11 +5,14 @@ import {
   ContactUs,
   EditPasswordPage,
   EditProfilePage,
+  ForgotPassword,
   HomeIndex,
   Login,
   PostDitails,
   Profile,
   Register,
+  RetrievePassword,
+  SuccessForgotPassword,
   SuccessRegister,
 } from "./pages";
 import {
@@ -55,6 +58,15 @@ function App() {
             {/* Account */}
             <Route element={<AccountLayout />}>
               <Route path="login" element={<Login />} />
+              <Route path="login/forgot-pass" element={<ForgotPassword />} />
+              <Route
+                path="login/forgot-pass/success"
+                element={<SuccessForgotPassword />}
+              />
+              <Route
+                path="login/retrieve-pass/:active_code"
+                element={<RetrievePassword />}
+              />
               <Route path="register" element={<Register />} />
               <Route path="register/:active_code" element={<ActiveAccount />} />
               <Route

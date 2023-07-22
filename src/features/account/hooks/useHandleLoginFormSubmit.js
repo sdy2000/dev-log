@@ -20,8 +20,10 @@ export default function useHandleLoginFormSubmit(values, setErrors, setLoader) {
     }
 
     if (validate()) {
-      dispatch(getUser(login));
-      setLoader(false);
+      dispatch(getUser(login)).then((res) => {
+        setLoader(false);
+        validate(res.payload);
+      });
     }
   };
 
