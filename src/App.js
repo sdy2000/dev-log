@@ -25,6 +25,7 @@ import {
 } from "./layouts";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Authenticate } from "./features";
 // import { Authenticate } from "./features";
 
 function App() {
@@ -47,16 +48,18 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            {/* Home */}
+            {/* //! Home */}
             <Route element={<HomeLayout />}>
               <Route path="*" element={<HomeIndex />} />
             </Route>
-            {/* Blog */}
+
+            {/* //! Blog */}
             <Route element={<BlogLayout />}>
               <Route path="blog/:slug" element={<PostDitails />} />
               <Route path="/blogs" element={<HomeIndex />} />
             </Route>
-            {/* Account */}
+
+            {/* //! Account */}
             <Route element={<AccountLayout />}>
               <Route path="login" element={<Login />} />
               <Route path="login/forgot-pass" element={<ForgotPassword />} />
@@ -79,20 +82,21 @@ function App() {
                 element={<SuccessRegister />}
               />
             </Route>
-            {/* Oder */}
+
+            {/* //! Oder */}
             <Route path="about-us" element={<AboutUs />} />
             <Route path="contact-us" element={<ContactUs />} />
-            {/* User Panel */}
-            {/* <Route element={<Authenticate />}> */}
-            <Route element={<UserPanelLayout />}>
-              <Route path="user-panel/" element={<Profile />} />
-              <Route path="user-panel/edit" element={<EditProfilePage />} />
-              <Route
-                path="user-panel/edit-pass"
-                element={<EditPasswordPage />}
-              />
+            {/* //! User Panel */}
+            <Route element={<Authenticate />}>
+              <Route element={<UserPanelLayout />}>
+                <Route path="user-panel/" element={<Profile />} />
+                <Route path="user-panel/edit" element={<EditProfilePage />} />
+                <Route
+                  path="user-panel/edit-pass"
+                  element={<EditPasswordPage />}
+                />
+              </Route>
             </Route>
-            {/* </Route> */}
           </Route>
           {/* <Route path="/AdminPanel" element={<AdminLaout />} /> */}
         </Routes>
